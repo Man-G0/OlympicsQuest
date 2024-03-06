@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">OlympicsQuest</string>
+    <string name="title_activity_widget">Widget</string>
 </resources>
