@@ -4,17 +4,24 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.olympicsquest.ui.theme.OlympicsQuestTheme
 
 class Widget : ComponentActivity() {
@@ -27,7 +34,9 @@ class Widget : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting2("Android")
+                    //Greeting2("Android")
+                    //ButtonImage(sport = "Escalade")
+                    Button("Basketball", "17:30", "Cession BK301")
                 }
             }
         }
@@ -129,13 +138,43 @@ fun ButtonImage(sport : String, modifier: Modifier = Modifier){
 }
 @Composable
 fun Button(sport : String, time : String, cession : String, modifier: Modifier = Modifier){
-
+    Box{
+        ButtonImage(sport = sport)
+        Column(modifier = Modifier.padding(5.dp)) {
+            Text(text = sport,
+                color = Color.White,
+                fontFamily = paris2024,
+                fontSize = 23.sp,
+                //lineHeight = 70.sp,
+                //letterSpacing = 0.37.sp
+                modifier = modifier.offset(x=15.dp)
+            )
+            Text(text = time,
+                color = Color.White,
+                fontFamily = paris2024,
+                fontSize = 17.sp,
+                //lineHeight = 70.sp,
+                //letterSpacing = 0.37.sp
+                modifier = modifier.offset(x=15.dp)
+                )
+            Spacer(modifier = Modifier.height(12.dp))
+            Text(text = cession,
+                color = Color.White,
+                fontFamily = paris2024,
+                fontSize = 15.sp,
+                //lineHeight = 70.sp,
+                //letterSpacing = 0.37.sp
+                modifier = modifier.offset(x=15.dp)
+            )
+        }
+    }
 }
 @Preview(showBackground = false)
 @Composable
 fun GreetingPreview2() {
     OlympicsQuestTheme {
         //Greeting2("Android")
-        ButtonImage(sport = "Escalade")
+        Button("Basketball", "17:30", "Cession BK301")
+        //ButtonImage(sport = "Escalade")
     }
 }
