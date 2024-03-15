@@ -25,12 +25,15 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    //Greeting("Android")
+                    BackgroundHomePage()
                 }
             }
         }
     }
 }
+
+data class Sport(val name: String, val time : String, val cession : String, val localisation : String)
 
 val paris2024 = FontFamily(
     Font(R.font.paris2024, FontWeight.Normal),
