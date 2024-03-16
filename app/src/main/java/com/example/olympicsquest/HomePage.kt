@@ -38,7 +38,7 @@ class HomePage(navController: NavHostController) : ComponentActivity() {
         }
     }
 }
-
+data class Sport(val name: String, val startTime : String, val endTime : String, val cession : String, val localisation : String)
 @Composable
 fun BackgroundHomePage(modifier: Modifier = Modifier) {
     Box{

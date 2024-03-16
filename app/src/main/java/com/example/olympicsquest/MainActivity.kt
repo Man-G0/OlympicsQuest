@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-data class Sport(val name: String, val startTime : String, val endTime : String, val cession : String, val localisation : String)
+
 
 val paris2024 = FontFamily(
     Font(R.font.paris2024, FontWeight.Normal),
