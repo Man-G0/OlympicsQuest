@@ -1,0 +1,143 @@
+﻿sport ;epreuve;session;lieu;date;horaire_debut;horaire_fin
+Archery;epreuve individuelle - femmes, tour de classement;ARC01;Invalides;25/07/2024;09:30:00;12:30:00
+Archery;epreuve individuelle - hommes, tour de classement;ARC02;Invalides;25/07/2024;14:15:00;17:15:00
+Archery;epreuve par equipe - femmes, eliminatoires (8e de finale);ARC03;Invalides;28/07/2024;09:30:00;11:05:00
+Archery;epreuve par equipe - femmes, quarts de finale, epreuve par equipe - femmes, demi-finales, epreuve par equipe - femmes, match pour la medaille de bronze, epreuve par equipe - femmes, match pour la medaille d'or;ARC04;Invalides;28/07/2024;14:15:00;17:55:00
+Archery;epreuve par equipe - hommes, eliminatoires (8e de finale);ARC05;Invalides;29/07/2024;09:30:00;11:05:00
+Archery;epreuve par equipe - hommes, quarts de finale, epreuve par equipe - hommes, demi-finales, epreuve par equipe - hommes, match pour la medaille de bronze, epreuve par equipe - hommes, match pour la medaille d'or;ARC06;Invalides;29/07/2024;14:15:00;17:55:00
+Archery;epreuve individuelle - hommes, eliminatoires (32e de finale) epreuve individuelle - femmes, eliminatoires (32e de finale) epreuve individuelle - hommes, eliminatoires (16e de finale) epreuve individuelle - femmes, eliminatoires (16e de finale);ARC07;Invalides;30/07/2024;12:00:00;15:55:00
+Archery;epreuve individuelle - hommes, eliminatoires (32e de finale) epreuve individuelle - femmes, eliminatoires (32e de finale) epreuve individuelle - hommes, eliminatoires (16e de finale) epreuve individuelle - femmes, eliminatoires (16e de finale);ARC08;Invalides;30/07/2024;17:45:00;20:25:00
+Archery;epreuve individuelle - hommes, eliminatoires (32e de finale) epreuve individuelle - femmes, eliminatoires (32e de finale) epreuve individuelle - hommes, eliminatoires (16e de finale) epreuve individuelle - femmes, eliminatoires (16e de finale);ARC09;Invalides;31/07/2024;12:00:00;15:55:00
+Archery;epreuve individuelle - hommes, eliminatoires (32e de finale) epreuve individuelle - femmes, eliminatoires (32e de finale) epreuve individuelle - hommes, eliminatoires (16e de finale) epreuve individuelle - femmes, eliminatoires (16e de finale);ARC10;Invalides;31/07/2024;17:45:00;20:25:00
+Archery;epreuve individuelle - hommes, eliminatoires (32e de finale) epreuve individuelle - femmes, eliminatoires (32e de finale) epreuve individuelle - hommes, eliminatoires (16e de finale) epreuve individuelle - femmes, eliminatoires (16e de finale);ARC11;Invalides;01/08/2024;09:30:00;13:25:00
+Archery;epreuve individuelle - hommes, eliminatoires (32e de finale) epreuve individuelle - femmes, eliminatoires (32e de finale) epreuve individuelle - hommes, eliminatoires (16e de finale) epreuve individuelle - femmes, eliminatoires (16e de finale);ARC12;Invalides;01/08/2024;15:30:00;19:25:00
+Archery;epreuve par equipe mixte, eliminatoires (8e de finale);ARC13;Invalides;02/08/2024;09:30:00;12:05:00
+Archery;epreuve par equipe mixte, quarts de finale epreuve par equipe mixte, demi-finales epreuve par equipe mixte, match pour la medaille de bronze epreuve par equipe mixte, match pour la medaille d'or;ARC14;Invalides;02/08/2024;14:15:00;17:25:00
+Archery;epreuve individuelle - femmes, eliminatoires (8e de finale);ARC15;Invalides;03/08/2024;09:30:00;11:15:00
+Archery;epreuve individuelle - femmes, quarts de finale epreuve individuelle - femmes, demi-finales epreuve individuelle - femmes, match pour la medaille de bronze epreuve individuelle - femmes, match pour la medaille d'or;ARC16;Invalides;03/08/2024;13:00:00;15:20:00
+Archery;epreuve individuelle - hommes, eliminatoires (8e de finale);ARC17;Invalides;04/08/2024;09:30:00;11:15:00
+Archery;epreuve individuelle - hommes, quarts de finale epreuve individuelle - hommes, demi-finales epreuve individuelle - hommes, match pour la medaille de bronze epreuve individuelle - hommes, match pour la medaille d'or;ARC18;Invalides;04/08/2024;13:00:00;15:20:00
+Athletisme;20 km marche - hommes, finale 20 km marche - femmes, finale;ATH01;Pont Iena;01/08/2024;07:30:00;11:45:00
+Athletisme;100 m - femmes, tour pr‚liminaire 100 m - femmes, 1er tour 1 500 m - hommes, 1er tour Saut en hauteur - femmes, qualifications Lancer de marteau - hommes, qualifications D‚cathlon - 100 m, hommes D‚cathlon - saut en longueur, hommes D‚cathlon - lancer de poids, hommes;ATH02;Stade de France;02/05/2024;10:00:00;13:00:00
+Athletisme;800 m - femmes, 1er tour Relais 4 x 400 m - mixte, 1er tour Triple saut - femmes, qualifications Lancer de disque - femmes, qualifications Lancer de poids - hommes, qualifications D‚cathlon - saut en hauteur, hommes D‚cathlon - 400 m, hommes 10 000 m - hommes, finale;ATH03;Stade de France;02/05/2024;19:00:00;22:00:00
+Athletisme;100 m - hommes, tour pr‚liminaire 100 m - hommes, 1er tour 800 m - femmes, R D‚cathlon - 110 m haies, hommes D‚cathlon - lancer de disque, hommes D‚cathlon - saut … la perche, hommes;ATH04;Stade de France;03/05/2024;10:00:00;16:00:00
+Athletisme;5 000 m - femmes, 1er tour 1 500 m - hommes, R Saut … la perche - hommes, qualifications 100 m - femmes, demi-finales D‚cathlon - lancer de javelot, hommes 100 m - femmes, finale Triple saut - femmes, finale D‚cathlon - 1 500 m, hommes Lancer de poids - hommes, finale Relais 4 x 400 m - mixte, finale;ATH05;Stade de France;03/05/2024;19:00:00;22:00:00
+Athletisme;200 m - femmes, 1er tour 1 500 m - femmes, 1er tour 400 m haies - femmes, 1er tour 110 m haies - hommes, 1er tour Lancer de marteau - femmes, qualifications Saut en longueur - hommes, qualifications;ATH06;Stade de France;04/05/2024;10:00:00;13:00:00
+Athletisme;400 m - hommes, 1er tour 800 m - femmes, demi-finales 100 m - hommes, demi-finales 1 500 m - hommes, demi-finales Saut en hauteur - femmes, finale 100 m - hommes, finale Lancer de marteau - hommes, finale;ATH07;Stade de France;04/05/2024;19:00:00;22:00:00
+Athletisme;400 m - femmes, 1er tour 400 m haies - hommes, 1er tour 200 m - femmes, R 400 m haies - femmes, R 400 m - hommes, R Saut … la perche - femmes, qualifications Lancer de disque - hommes, qualifications;ATH08;Stade de France;05/05/2024;10:00:00;13:00:00
+Athletisme;200 m - hommes, 1er tour 3 000 m steeple - hommes, 1er tour 200 m - femmes, demi-finales 800 m - femmes, finale Lancer de disque - femmes, finale Saut … la perche - hommes, finale;ATH09;Stade de France;05/05/2024;19:00:00;22:00:00
+Athletisme;3 000 m steeple - femmes, 1er tour 400 m - femmes, R 110 m haies - hommes, R 400 m haies - hommes, R 200 m - hommes, R Saut en longueur - femmes, qualifications Lancer de javelot - hommes, qualifications;ATH10;Stade de France;06/05/2024;10:00:00;13:00:00
+Athletisme;400 m haies - femmes, demi-finales 400 m - hommes, demi-finales 200 m - femmes, finale 5 000 m - femmes, finale Lancer de marteau - femmes, finale 1 500 m - hommes, finale Saut en longueur - hommes, finale;ATH11;Stade de France;06/05/2024;19:00:00;22:00:00
+Athletisme;35 km marche mixte par ‚quipe, finale;ATH12;Pont Iena;07/05/2024;07:30:00;11:00:00
+Athletisme;100 m haies - femmes, 1er tour 800 m - hommes, 1er tour 5 000 m - hommes, 1er tour 1 500 m - femmes, R Lancer de javelot - femmes, qualifications Saut en hauteur - hommes, qualifications;ATH13;Stade de France;07/05/2024;10:00:00;13:30:00
+Athletisme;Triple saut - hommes, qualifications 400 m - femmes, demi-finales 200 m - hommes, demi-finales 110 m haies - hommes, demi-finales 400 m haies - hommes, demi-finales Saut … la perche - femmes, finale 400 m - hommes, finale 3 000 m steeple - hommes, finale Lancer de disque - hommes, finale;ATH14;Stade de France;07/05/2024;19:00:00;22:00:00
+Athletisme;Relais 4 x 100 m - femmes, 1er tour Relais 4 x 100 m - hommes, 1er tour 100 m haies - femmes, R 800 m - hommes, R Lancer de poids - femmes, qualifications Heptathlon - 100 m haies, femmes Heptathlon - saut en hauteur, femmes;ATH15;Stade de France;08/05/2024;10:00:00;13:00:00
+Athletisme;1 500 m - femmes, demi-finales Heptathlon - lancer de poids, femmes Heptathlon - 200 m, femmes 400 m haies - femmes, finale 3 000 m steeple - femmes, finale Saut en longueur - femmes, finale 200 m - hommes, finale 400 m - hommes, finale 110 m haies - hommes, finale Saut en longueur - femmes, finale 200 m - hommes, finale 400 m - hommes, finale 110 m haies - hommes, finale;ATH16;Stade de France;08/05/2024;19:00:00;22:00:00
+Athletisme;Relais 4 x 400 m - femmes, 1er tour Relais 4 x 400 m - hommes, 1er tour 100 m haies - femmes, demi-finales 800 m - hommes, demi-finales Relais 4 x 400 m - hommes, 1er tour 100 m haies - femmes, demi-finales 800 m - hommes, demi-finales;ATH17;Stade de France;09/05/2024;10:00:00;13:00:00
+Athletisme;400 m - femmes, finale 10 000 m - femmes, finale Heptathlon - 800 m, femmes Relais 4 x 100 m - femmes, finale Lancer de poids - femmes, finale 400 m - femmes, finale 10 000 m - femmes, finale Heptathlon - 800 m, femmes Relais 4 x 100 m - femmes, finale Lancer de poids - femmes, finale;ATH18;Stade de France;09/05/2024;19:00:00;22:00:00
+Athletisme;1 500 m - femmes, finale 100 m haies - femmes, finale Relais 4 x 400 m - femmes, finale;ATH19;Hotel de Ville;10/05/2024;08:00:00;11:15:00
+Athletisme;1 500 m - femmes, finale 100 m haies - femmes, finale Relais 4 x 400 m - femmes, finale 1 500 m - femmes, finale 100 m haies - femmes, finale Relais 4 x 400 m - femmes, finale 1 500 m - femmes, finale 100 m haies - femmes, finale Relais 4 x 400 m - femmes, finale;ATH20;Stade de France;10/05/2024;19:00:00;22:00:00
+Athletisme;Marathon - femmes, finale;ATH21;Hotel de Ville;11/05/2024;08:00:00;11:30:00
+Badminton;Double mixte, poules pr‚liminaires Simple femmes, poules pr‚liminaires Double hommes, poules pr‚liminaires Double femmes, poules pr‚liminaires Simple hommes, poules pr‚liminaires;BDM01;Arena Porte de la Chapelle;27/07/2024;08:30:00;12:00:00
+Badminton;Double mixte, poules pr‚liminaires Simple femmes, poules pr‚liminaires Double hommes, poules pr‚liminaires Double femmes, poules pr‚liminaires Simple hommes, poules pr‚liminaires;BDM02;Arena Porte de la Chapelle;27/07/2024;14:00:00;17:30:00
+Badminton;Simple femmes, poules pr‚liminaires Double hommes, poules pr‚liminaires Double femmes, poules pr‚liminaires Simple hommes, poules pr‚liminaires;BDM03;Arena Porte de la Chapelle;27/07/2024;19:30:00;23:00:00
+Badminton;Double mixte, poules pr‚liminaires Simple femmes, poules pr‚liminaires Double hommes, poules pr‚liminaires Double femmes, poules pr‚liminaires Simple hommes, poules pr‚liminaires;BDM04;Arena Porte de la Chapelle;28/07/2024;08:30:00;12:00:00
+Badminton;Double mixte, poules pr‚liminaires Double femmes, poules pr‚liminaires Simple femmes, poules pr‚liminaires Simple hommes, poules pr‚liminaires;BDM05;Arena Porte de la Chapelle;28/07/2024;14:00:00;17:30:00
+Badminton;Double mixte, poules pr‚liminaires Double hommes, poules pr‚liminaires Simple femmes, poules pr‚liminaires Double femmes, poules pr‚liminaires Simple hommes, poules pr‚liminaires;BDM06;Arena Porte de la Chapelle;28/07/2024;19:30:00;23:00:00
+Badminton;Double mixte, poules pr‚liminaires Double hommes, poules pr‚liminaires Simple femmes, poules pr‚liminaires Double femmes, poules pr‚liminaires Simple hommes, poules pr‚liminaires;BDM07;Arena Porte de la Chapelle;29/07/2024;08:30:00;12:00:00
+Badminton;Double mixte, poules pr‚liminaires Double femmes, poules pr‚liminaires Simple femmes, poules pr‚liminaires Simple hommes, poules pr‚liminaires Double hommes, poules pr‚liminaires;BDM08;Arena Porte de la Chapelle;29/07/2024;14:00:00;17:30:00
+Badminton;Double mixte, poules pr‚liminaires Simple femmes, poules pr‚liminaires Double hommes, poules pr‚liminaires Double femmes, poules pr‚liminaires Simple hommes, poules pr‚liminaires;BDM09;Arena Porte de la Chapelle;29/07/2024;19:30:00;23:00:00
+Badminton;Simple femmes, poules pr‚liminaires Double hommes, poules pr‚liminaires Double femmes, poules pr‚liminaires Simple hommes, poules pr‚liminaires;BDM10;Arena Porte de la Chapelle;30/07/2024;08:30:00;12:00:00
+Badminton;Double hommes, poules pr‚liminaires Double femmes, poules pr‚liminaires Simple femmes, poules pr‚liminaires Simple hommes, poules pr‚liminaires;BDM11;Arena Porte de la Chapelle;30/07/2024;14:00:00;17:30:00
+Badminton;Simple femmes, poules pr‚liminaires Double hommes, poules pr‚liminaires Double femmes, poules pr‚liminaires Simple hommes, poules pr‚liminaires;BDM12;Arena Porte de la Chapelle;30/07/2024;19:30:00;23:00:00
+Badminton;Simple femmes, poules pr‚liminaires Simple hommes, poules pr‚liminaires;BDM13;Arena Porte de la Chapelle;31/07/2024;08:30:00;12:00:00
+Badminton;Simple femmes, poules pr‚liminaires Simple hommes, poules pr‚liminaires;BDM14;Arena Porte de la Chapelle;31/07/2024;14:00:00;17:30:00
+Badminton;Simple femmes, poules pr‚liminaires Simple hommes, poules pr‚liminaires Double mixte, quarts de finale;BDM15;Arena Porte de la Chapelle;31/07/2024;19:30:00;23:00:00
+Badminton;Double femmes, quarts de finale Simple hommes, 8e de finale;BDM16;Arena Porte de la Chapelle;01/08/2024;08:30:00;11:00:00
+Badminton;Double hommes, quarts de finale Simple hommes, 8e de finale;BDM17;Arena Porte de la Chapelle;01/08/2024;13:00:00;16:30:00
+Badminton;Simple femmes, 8e de finale Double mixte, demi-finale;BDM18;Arena Porte de la Chapelle;01/08/2024;18:30:00;22:00:00
+Badminton;Double femmes, demi-finale Double hommes, demi-finale;BDM19;Arena Porte de la Chapelle;02/08/2024;08:30:00;13:00:00
+Badminton;Double mixte, match bronze Double mixte, match or Simple hommes, quarts de finale;BDM20;Arena Porte de la Chapelle;02/08/2024;15:00:00;22:30:00
+Badminton;Simple femmes, quarts de finale;BDM21;Arena Porte de la Chapelle;03/08/2024;08:30:00;13:00:00
+Badminton;Double femmes, match bronze Double femmes, match or;BDM22;Arena Porte de la Chapelle;03/08/2024;15:00:00;17:30:00
+Badminton;Simple femmes, demi-finales Simple hommes, demi-finales;BDM23;Arena Porte de la Chapelle;04/08/2024;08:30:00;13:00:00
+Badminton;Double hommes, match bronze Double hommes, match or;BDM24;Arena Porte de la Chapelle;04/08/2024;15:00:00;17:30:00
+Badminton;Simple femmes, match bronze Simple femmes, match or;BDM25;Arena Porte de la Chapelle;05/08/2024;09:45:00;12:30:00
+Badminton;Simple hommes, match bronze Simple hommes, match or;BDM26;Arena Porte de la Chapelle;05/08/2024;14:30:00;17:30:00
+Basketball;Femmes, matches de poule (2 matchs) Hommes, matches de poule (2 matchs);BK301;La Concorde 1;30/07/2024;17:30:00;19:30:00
+Basketball;Femmes, matches de poule (2 matchs) Hommes, matches de poule (2 matchs);BK302;La Concorde 1;30/07/2024;21:00:00;23:00:00
+Basketball;Femmes, matches de poule (2 matchs) Hommes, matches de poule (2 matchs);BK303;La Concorde 1;31/07/2024;17:30:00;19:30:00
+Basketball;Femmes, matches de poule (2 matchs) Hommes, matches de poule (2 matchs);BK304;La Concorde 1;31/07/2024;21:00:00;23:00:00
+Basketball;Femmes, matches de poule (2 matchs) Hommes, matches de poule (2 matchs);BK305;La Concorde 1;01/08/2024;09:00:00;11:00:00
+Basketball;Femmes, matches de poule (2 matchs) Hommes, matches de poule (2 matchs);BK306;La Concorde 1;01/08/2024;12:30:00;14:30:00
+Basketball;Femmes, matches de poule (2 matchs) Hommes, matches de poule (2 matchs);BK307;La Concorde 1;01/08/2024;18:00:00;20:00:00
+Basketball;Femmes, matches de poule (2 matchs) Hommes, matches de poule (2 matchs);BK308;La Concorde 1;01/08/2024;21:30:00;23:30:00
+Basketball;Femmes, matches de poule (2 matchs) Hommes, matches de poule (2 matchs);BK309;La Concorde 1;02/08/2024;09:00:00;11:00:00
+Basketball;Femmes, matches de poule (2 matchs) Hommes, matches de poule (2 matchs);BK310;La Concorde 1;02/08/2024;12:30:00;14:30:00
+Basketball;Femmes, matches de poule (2 matchs) Hommes, matches de poule (2 matchs);BK311;La Concorde 1;02/08/2024;17:30:00;19:30:00
+Basketball;Femmes, matches de poule (2 matchs) Hommes, matches de poule (2 matchs);BK312;La Concorde 1;02/08/2024;21:00:00;23:00:00
+Basketball;Femmes, matches de poule (4 matchs);BK313;La Concorde 1;03/08/2024;17:30:00;19:30:00
+Basketball;Femmes, play in (2 matchs);BK314;La Concorde 1;03/08/2024;21:30:00;22:30:00
+Basketball;Hommes, matches de poule (4 matches);BK315;La Concorde 1;04/08/2024;17:30:00;19:30:00
+Basketball;Hommes, play in (2 matchs);BK316;La Concorde 1;04/08/2024;21:30:00;22:30:00
+Basketball;Femmes et hommes, demi-finales;BK317;La Concorde 1;05/08/2024;17:30:00;19:30:00
+Basketball;Femmes, match pour la medaille de bronze Hommes, match pour la medaille de bronze Femmes, match pour la medaille d'or Hommes, match pour la medaille d'or;BK318;La Concorde 1;05/08/2024;21:00:00;23:30:00
+Basketball (Phase finale);Hommes, quart de finale;BKB37;Arena Bercy;06/08/2024;11:00:00;13:00:00
+Basketball (Phase finale);Hommes, quart de finale;BKB38;Arena Bercy;06/08/2024;14:30:00;16:30:00
+Basketball (Phase finale);Hommes, quart de finale;BKB39;Arena Bercy;06/08/2024;18:00:00;20:00:00
+Basketball (Phase finale);Hommes, quart de finale;BKB40;Arena Bercy;06/08/2024;21:30:00;23:30:00
+Basketball (Phase finale);Femmes, quart de finale;BKB41;Arena Bercy;07/08/2024;11:00:00;13:00:00
+Basketball (Phase finale);Femmes, quart de finale;BKB42;Arena Bercy;07/08/2024;14:30:00;16:30:00
+Basketball (Phase finale);Femmes, quart de finale;BKB43;Arena Bercy;07/08/2024;18:00:00;20:00:00
+Basketball (Phase finale);Femmes, quart de finale;BKB44;Arena Bercy;07/08/2024;21:30:00;23:30:00
+Basketball (Phase finale);Hommes, demi-finale;BKB45;Arena Bercy;08/08/2024;17:30:00;19:30:00
+Basketball (Phase finale);Hommes, demi-finale;BKB46;Arena Bercy;08/08/2024;21:00:00;23:00:00
+Basketball (Phase finale);Femmes, demi-finale;BKB47;Arena Bercy;09/08/2024;17:30:00;19:30:00
+Basketball (Phase finale);Femmes, demi-finale;BKB48;Arena Bercy;09/08/2024;21:00:00;23:00:00
+Basketball (Phase finale);Hommes, match pour la medaille de bronze;BKB49;Arena Bercy;10/08/2024;11:00:00;13:00:00
+Basketball (Phase finale);Hommes, match pour la medaille d'or;BKB50;Arena Bercy;10/08/2024;21:30:00;00:00:00
+Basketball (Phase finale);Femmes, match pour la medaille de bronze;BKB51;Arena Bercy;11/08/2024;11:30:00;13:30:00
+Basketball (Phase finale);Femmes, match pour la medaille d'or;BKB52;Arena Bercy;11/08/2024;15:30:00;18:00:00
+Breaking;Femmes, qualifications;BKG01;La Concorde 1;09/08/2024;16:00:00;18:00:00
+Breaking;Femmes, finale;BKG02;La Concorde 1;09/08/2024;20:00:00;22:00:00
+Breaking;Hommes, qualifications;BKG03;La Concorde 1;10/08/2024;16:00:00;18:00:00
+Breaking;Hommes, finale;BKG04;La Concorde 1;10/08/2024;20:00:00;22:00:00
+BMX Freestyle;Park - femmes, manche qualificative Park - hommes, manche qualificative;BMF01;La Concorde ;30/07/2024;13:25:00;16:30:00
+BMX Freestyle;Park - femmes, finale Park - hommes, finale;BMF02;La Concorde ;31/07/2024;13:10:00;16:30:00
+Boxe;54kg - femmes, 1/16 finale ou 1/8 finale 60kg - femmes, 1/16 finale ou 1/8 finale 63.5kg - hommes, 1/16 finale ou 1/8 finale 80kg - hommes, 1/16 finale ou 1/8 finale;BOX01;Arena Paris Nord;27/07/2024;15:30:00;17:30:00
+Boxe;54kg - femmes, 1/16 finale ou 1/8 finale 60kg - femmes, 1/16 finale ou 1/8 finale 63.5kg - hommes, 1/16 finale ou 1/8 finale 80kg - hommes, 1/16 finale ou 1/8 finale;BOX02;Arena Paris Nord;27/07/2024;20:00:00;22:15:00
+Boxe;50kg - femmes, 1/16 finale ou 1/8 finale 66kg - femmes, 1/16 finale ou 1/8 finale 51 kg - hommes, 1/16 finale ou 1/8 finale 57kg - hommes, 1/16 finale ou 1/8 finale 71kg - hommes, 1/16 finale ou 1/8 finale 92kg - hommes, 1/16 finale ou 1/8 finale;BOX03;Arena Paris Nord;28/07/2024;11:00:00;13:00:00
+Boxe;50kg - femmes, 1/16 finale ou 1/8 finale 66kg - femmes, 1/16 finale ou 1/8 finale 51 kg - hommes, 1/16 finale ou 1/8 finale 57kg - hommes, 1/16 finale ou 1/8 finale 71kg - hommes, 1/16 finale ou 1/8 finale 92kg - hommes, 1/16 finale ou 1/8 finale;BOX04;Arena Paris Nord;28/07/2024;15:30:00;17:45:00
+Boxe;50kg - femmes, 1/16 finale ou 1/8 finale 75kg - femmes, 1/16 finale ou 1/8 finale 71kg - hommes, 1/16 finale ou 1/8 finale 92kg - hommes, 1/16 finale ou 1/8 finale;BOX05;Arena Paris Nord;28/07/2024;20:00:00;22:00:00
+Boxe;60kg - femmes, 1/16 finale ou 1/8 finale 63.5kg - hommes, 1/16 finale ou 1/8 finale +92kg - hommes, 1/16 finale ou 1/8 finale;BOX06;Arena Paris Nord;29/07/2024;11:00:00;13:00:00
+Boxe;60kg - femmes, 1/16 finale ou 1/8 finale 63.5kg - hommes, 1/16 finale ou 1/8 finale +92kg - hommes, 1/16 finale ou 1/8 finale;BOX07;Arena Paris Nord;29/07/2024;15:30:00;17:30:00
+Boxe;60kg - femmes, 1/16 finale ou 1/8 finale 63.5kg - hommes, 1/16 finale ou 1/8 finale +92kg - hommes, 1/16 finale ou 1/8 finale;BOX08;Arena Paris Nord;29/07/2024;20:00:00;22:00:00
+Boxe;54kg - femmes, 1/16 finale ou 1/8 finale 57kg - femmes, 1/16 finale ou 1/8 finale 51 kg - hommes, 1/16 finale ou 1/8 finale 80kg - hommes, 1/16 finale ou 1/8 finale ;BOX09;Arena Paris Nord;30/07/2024;11:00:00;13:30:00
+Boxe;54kg - femmes, 1/16 finale ou 1/8 finale 57kg - femmes, 1/16 finale ou 1/8 finale 51 kg - hommes, 1/16 finale ou 1/8 finale 80kg - hommes, 1/16 finale ou 1/8 finale ;BOX10;Arena Paris Nord;30/07/2024;15:30:00;18:00:00
+Boxe;54kg - femmes, 1/16 finale ou 1/8 finale 57kg - femmes, 1/16 finale ou 1/8 finale 51 kg - hommes, 1/16 finale ou 1/8 finale 80kg - hommes, 1/16 finale ou 1/8 finale ;BOX11;Arena Paris Nord;30/07/2024;20:00:00;22:30:00
+Boxe;60kg - femmes, quart de finale 66kg - femmes, 1/16 finale ou 1/8 finale 57 kg - hommes, 1/16 finale ou 1/8 finale 71 kg - hommes, 1/16 finale ou 1/8 finale ;BOX12;Arena Paris Nord;31/07/2024;11:00:00;13:15:00
+Boxe;60kg - femmes, quart de finale 66kg - femmes, 1/16 finale ou 1/8 finale 57 kg - hommes, 1/16 finale ou 1/8 finale 71 kg - hommes, 1/16 finale ou 1/8 finale 57 kg - hommes, 1/16 finale ou 1/8 finale 71 kg - hommes, 1/16 finale ou 1/8 finale ;BOX13;Arena Paris Nord;31/07/2024;15:30:00;18:00:00
+Boxe;60kg - femmes, quart de finale 66kg - femmes, 1/16 finale ou 1/8 finale 57 kg - hommes, 1/16 finale ou 1/8 finale 71 kg - hommes, 1/16 finale ou 1/8 finale ;BOX14;Arena Paris Nord;31/07/2024;20:00:00;22:15:00
+Boxe;60kg - femmes, quart de finale 66kg - femmes, 1/16 finale ou 1/8 finale 57 kg - hommes, 1/16 finale ou 1/8 finale 71 kg - hommes, 1/16 finale ou 1/8 finale 60kg - femmes, quart de finale 66kg - femmes, 1/16 finale ou 1/8 finale 57 kg - hommes, 1/16 finale ou 1/8 finale 71 kg - hommes, 1/16 finale ou 1/8 finale ;BOX15;Arena Paris Nord;01/08/2024;11:00:00;13:15:00
+Boxe;50kg - femmes, 1/16 finale ou 1/8 finale 54kg - femmes, quart de finale 75kg - femmes, 1/16 finale ou 1/8 finale  63,5kg - hommes, quart de finale 92kg - hommes, quart de finale;BOX16;Arena Paris Nord;01/08/2024;15:30:00;18:00:00
+Boxe;50kg - femmes, 1/16 finale ou 1/8 finale 54kg - femmes, quart de finale 75kg - femmes, 1/16 finale ou 1/8 finale  63,5kg - hommes, quart de finale 92kg - hommes, quart de finale;BOX17;Arena Paris Nord;01/08/2024;20:00:00;22:15:00
+Boxe;57kg - femmes, 1/16 finale ou 1/8 finale 51kg - hommes, quart de finale 80kg - hommes, quart de finale +92kg - hommes, quart de finale;BOX18;Arena Paris Nord;02/08/2024;15:30:00;18:00:00
+Boxe;57kg - femmes, 1/16 finale ou 1/8 finale 51kg - hommes, quart de finale 80kg - hommes, quart de finale +92kg - hommes, quart de finale;BOX19;Arena Paris Nord;02/08/2024;20:00:00;22:30:00
+Boxe;50kg - femmes quart de finale 60kg - femmes, demi-finale 50kg - femmes quart de finale 60kg - femmes, demi-finale;BOX20;Arena Paris Nord;03/08/2024;15:30:00;17:45:00
+Boxe;50kg - femmes quart de finale 60kg - femmes, demi-finale 66kg - femmes, quart de finale 57kg - hommes, quart de finale 71kg - hommes, quart de finale;BOX21;Arena Paris Nord;03/08/2024;20:00:00;22:15:00
+Boxe;54kg - femmes, demi-finale 57kg - femmes, quart de finale 75kg - femmes, quart de finale 51kg - hommes, demi-finale 63,5kg - hommes, demi-finale 80kg - hommes, demi-finale 92kg - hommes, demi-finale ;BOX22;Arena Paris Nord;04/08/2024;11:00:00;13:15:00
+Boxe;54kg - femmes, demi-finale 57kg - femmes, quart de finale 75kg - femmes, quart de finale 51kg - hommes, demi-finale 63,5kg - hommes, demi-finale 80kg - hommes, demi-finale 92kg - hommes, demi-finale ;BOX23;Arena Paris Nord;04/08/2024;15:30:00;17:45:00
+Boxe;54kg - femmes, demi-finales 60kg - femmes, finale 66kg - femmes, demi-finales 71kg - hommes, demi-finales;BOX24;Stade Roland-Garros - P.Chatrier;06/08/2024;21:30:00;23:30:00
+Boxe;57kg - femmes, demi-finales 63,5kg - hommes, finale 80kg - hommes, finale +92kg - hommes, demi-finales;BOX25;Stade Roland-Garros - P.Chatrier;07/08/2024;21:30:00;23:30:00
+Boxe;54kg - femmes, finale 75kg - femmes, demi-finales 51kg - hommes, finale 57kg - hommes, demi-finales;BOX26;Stade Roland-Garros - P.Chatrier;08/08/2024;21:30:00;23:30:00
+Boxe;50kg - femmes, finale 66kg - femmes, finale 50kg - femmes, finale 66kg - femmes, finale;BOX27;Stade Roland-Garros - P.Chatrier;09/08/2024;21:30:00;23:30:00
+Boxe;50kg - femmes, finale 66kg - femmes, finale;BOX28;Stade Roland-Garros - P.Chatrier;10/08/2024;21:30:00;23:30:00
+Escalade;Bloc - hommes, demi-finale Vitesse - femmes, qualifications;CLB01;Site d escalade du Bourget;05/08/2024;10:00:00;14:00:00
+Escalade;Bloc - femmes, demi-finale Vitesse - hommes, qualifications;CLB02;Site d escalade du Bourget;06/08/2024;10:00:00;14:00:00
+Escalade;Difficult‚ - hommes, demi-finale Vitesse - femmes, finale;CLB03;Site d escalade du Bourget;07/08/2024;10:00:00;13:15:00
+Escalade;Difficult‚ - femmes, demi-finale Vitesse - hommes, finale;CLB04;Site d escalade du Bourget;08/08/2024;10:00:00;13:15:00
+Escalade;Difficult‚ - femmes, demi-finale Vitesse - hommes, finale;CLB05;Site d escalade du Bourget;09/08/2024;10:15:00;13:20:00
+Escalade;Difficult‚ - femmes, demi-finale Vitesse - hommes, finale;CLB06;Site d escalade du Bourget;10/08/2024;10:15:00;13:20:00
+Cyclisme sur route;Contre-la-montre individuel - femmes Contre-la-montre individuel - hommes;CRD01;Invalides;27/07/2024;14:30:00;18:30:00
+Cyclisme sur route;Course sur route - hommes;CRD02;Pont Iena;03/08/2024;11:00:00;18:15:00
+Cyclisme sur route;Course sur route - femmes;CRD03;Pont Iena;04/08/2024;14:00:00;18:45:00

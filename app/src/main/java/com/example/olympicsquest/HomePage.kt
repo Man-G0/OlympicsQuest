@@ -52,7 +52,7 @@ fun BackgroundHomePage(modifier: Modifier = Modifier) {
         )
         Box(
             modifier = Modifier
-                .offset(y=150.dp)
+                .offset(y = 150.dp)
                 .background(Color.White, RoundedCornerShape(30.dp))
                 .height(675.dp)
                 .fillMaxWidth()

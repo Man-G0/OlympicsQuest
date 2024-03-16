@@ -36,8 +36,7 @@ class Widget : ComponentActivity() {
                 ) {
                     //Greeting2("Android")
                     //ButtonImage(sport = "Escalade")
-                    Button(Sport("Basketball", "17:30", "Cession BK301", "Paris"))
-                }
+                    Button(Sport("Basketball", "17:30", "16:30","Cession BK301", "Paris"))               }
             }
         }
     }
@@ -149,7 +148,7 @@ fun Button(sport : Sport, modifier: Modifier = Modifier){
                 //letterSpacing = 0.37.sp
                 modifier = modifier.offset(x=15.dp)
             )
-            Text(text = sport.time,
+            Text(text = sport.startTime,
                 color = Color.White,
                 fontFamily = paris2024,
                 fontSize = 17.sp,
@@ -174,7 +173,7 @@ fun Button(sport : Sport, modifier: Modifier = Modifier){
 fun GreetingPreview2() {
     OlympicsQuestTheme {
         //Greeting2("Android")
-        Button(Sport("Basketball", "17:30", "Cession BK301", "Paris"))
+        Button(Sport("Basketball", "17:30", "16:30","Cession BK301", "Paris"))
         //ButtonImage(sport = "Escalade")
     }
 }
