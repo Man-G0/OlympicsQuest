@@ -18,21 +18,39 @@ fun SetupNavGraph(navController: NavHostController){
             HomePage(navController = navController)
         }
         composable(
-            route = Screen.Meteo.route,
+            route = Screen.SportPage.route,
             arguments = listOf(
-                navArgument(name = "events")
+
+                navArgument(name = "name")
                 {
-                    type = NavType.ParcelableType(Screen::class.java)
+                    type = NavType.StringType
                 },
+                navArgument(name = "startTime")
+                {
+                    type = NavType.StringType
+                },
+                navArgument(name = "endTime")
+                {
+                    type = NavType.StringType
+                },
+                navArgument(name = "cession")
+                {
+                    type = NavType.StringType
+                },
+                navArgument(name = "localisation")
+                {
+                    type = NavType.StringType
+                }
 
             )
         ) {navBackStackEntry ->
-            val cityName = navBackStackEntry.arguments?.getString("cityName")
-            val temp = navBackStackEntry.arguments?.getInt("temp")
-            val meteo = navBackStackEntry.arguments?.getString("meteo")
-            val highTemp = navBackStackEntry.arguments?.getInt("highTemp")
-            val lowTemp = navBackStackEntry.arguments?.getInt("lowTemp")
-            //MeteoPage(cityName,temp,meteo,highTemp,lowTemp,navController = navController)
+            val events = navBackStackEntry.arguments?.getString("cityName")
+            val name = navBackStackEntry.arguments?.getString("name")
+            val startTime = navBackStackEntry.arguments?.getString("startTime")
+            val endTime = navBackStackEntry.arguments?.getString("endTime")
+            val cession = navBackStackEntry.arguments?.getString("cession")
+            val localisation = navBackStackEntry.arguments?.getString("localisation")
+            //SportPage(events,name,startTime,endTime,lowTemp,cession,localisation,navController = navController)
         }
     }
 }
