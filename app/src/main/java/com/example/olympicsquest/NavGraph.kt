@@ -2,12 +2,10 @@ package com.example.olympicsquest
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.NavType
 import androidx.navigation.navArgument
-import com.example.olympicsquest.HomePage
-import com.example.olympicsquest.Screen
 
 @Composable
 fun SetupNavGraph(navController: NavHostController){
@@ -51,6 +49,9 @@ fun SetupNavGraph(navController: NavHostController){
             val cession = navBackStackEntry.arguments?.getString("cession")
             val localisation = navBackStackEntry.arguments?.getString("localisation")
             //SportPage(events,name,startTime,endTime,cession,localisation,navController = navController)
+
+
         }
     }
 }
+
