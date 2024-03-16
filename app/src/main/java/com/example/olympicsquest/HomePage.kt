@@ -21,10 +21,19 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import android.content.res.Resources
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Text
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.content.res.ResourcesCompat
+import androidx.lifecycle.ViewModel
 import androidx.navigation.NavHostController
+import com.example.olympicsquest.model.Sport
+import com.example.olympicsquest.sealed.DataState
 import com.example.olympicsquest.ui.theme.OlympicsQuestTheme
+import com.example.olympicsquest.viewmodel.MainViewModel
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
@@ -34,10 +43,10 @@ import java.io.IOException
 import java.io.InputStreamReader
 import java.nio.charset.Charset
 import com.google.firebase.database.*
-
-
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 class HomePage(navController: NavHostController) : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -47,57 +56,52 @@ class HomePage(navController: NavHostController) : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    //Greeting3("Android")
+                    BackgroundHomePage()
+                    SetData(viewModel())
+                }
+
+            }
+        }
+    }
+
+
+    @Composable
+    private fun SetData(viewModel: MainViewModel) {
+        when(val result=viewModel.response.value){
+            is DataState.Loading->{
+                Box(modifier = Modifier.fillMaxSize()
+                ){
+                    CircularProgressIndicator()
+                }
+
+            }is DataState.Success->{
+                ShowLazyList(result.data)
+            }is DataState.Failure->{
+                Box(modifier = Modifier.fillMaxSize()
+                ){
+                    Text(text= result.message)
+                }
+            }else -> {
+                Box(modifier = Modifier.fillMaxSize()
+                ){
+                    Text(text= "Error Fetching Data")
                 }
             }
         }
     }
-}
-data class Sport(
-    val name: String,
-    val startTime : String,
-    val endTime : String,
-    val cession : String,
-    val localisation : String) {
-    override fun toString(): String {
-        return "Sport(name='$name', startTime='$startTime', endTime='$endTime', cession='$cession', localisation='$localisation')"
-    }
-}
-
-private val sports: MutableList<Sport> = mutableListOf()
-private val database = FirebaseDatabase.getInstance()
-private val myRef = database.reference
-// Récupérer les données depuis Firebase
-
-@Composable
-fun ReadCalendrier(){
-    val context = LocalContext.current
-    val resources = context.resources
-    val inputStream = resources.openRawResource(R.raw.calendrier_jo)
-    val reader = BufferedReader(InputStreamReader(inputStream, Charset.forName("UTF-8")))
-
-    try {
-        reader.readLine() // Skip the first line
-        var line: String
-        while (reader.readLine().also { line = it } != null) {
-            val tokens = line.split(";")
-            val event = Sport(
-                name = tokens[0],
-                startTime = tokens[1],
-                endTime = tokens[2],
-                cession = tokens[3],
-                localisation = tokens[4]
-            )
-            sports.add(event)
-            Log.d("HomePage", "Just created: $event")
+    @Composable
+    private fun ShowLazyList(sports: MutableList<Sport>) {
+        LazyColumn{
+            items(sports){each ->
+                Button(sport = each)
+            }
         }
-    } catch (e: IOException) {
-        //Log.d("HomePage", "Error reading calendrier file on line $line", e)
-        e.printStackTrace()
-    } finally {
-        reader.close()
     }
 }
+
+
+
+
 @Composable
 fun BackgroundHomePage(modifier: Modifier = Modifier) {
     Box{

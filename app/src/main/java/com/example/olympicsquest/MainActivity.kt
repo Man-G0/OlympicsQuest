@@ -16,9 +16,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.olympicsquest.ui.theme.OlympicsQuestTheme
+import com.example.olympicsquest.viewmodel.MainViewModel
 
 class MainActivity : ComponentActivity() {
     lateinit var navController: NavHostController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
