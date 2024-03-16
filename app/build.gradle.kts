@@ -77,4 +77,5 @@ dependencies {
     // csv reader
     implementation("org.apache.commons:commons-csv:1.10.0")
     implementation("androidx.graphics:graphics-shapes:1.0.0-alpha05")
+    implementation("com.google.firebase:firebase-database:20.3.1")
 }
