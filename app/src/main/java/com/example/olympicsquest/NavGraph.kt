@@ -1,4 +1,4 @@
-package com.example.olympicsquest.ui.theme
+package com.example.olympicsquest
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
 import com.example.olympicsquest.HomePage
+import com.example.olympicsquest.Screen
 
 @Composable
 fun SetupNavGraph(navController: NavHostController){
@@ -19,26 +20,10 @@ fun SetupNavGraph(navController: NavHostController){
         composable(
             route = Screen.Meteo.route,
             arguments = listOf(
-                navArgument(name = "cityName")
+                navArgument(name = "events")
                 {
-                    type = NavType.StringType
+                    type = NavType.ParcelableType(Screen::class.java)
                 },
-                navArgument(name = "temp")
-                {
-                    type = NavType.IntType
-                },
-                navArgument(name = "meteo")
-                {
-                    type = NavType.StringType
-                },
-                navArgument(name = "highTemp")
-                {
-                    type = NavType.IntType
-                },
-                navArgument(name = "lowTemp")
-                {
-                    type = NavType.IntType
-                }
 
             )
         ) {navBackStackEntry ->

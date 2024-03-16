@@ -16,7 +16,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.olympicsquest.ui.theme.OlympicsQuestTheme
-import com.example.olympicsquest.ui.theme.SetupNavGraph
 
 class MainActivity : ComponentActivity() {
     lateinit var navController: NavHostController
