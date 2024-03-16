@@ -13,13 +13,20 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.olympicsquest.ui.theme.OlympicsQuestTheme
+import com.example.olympicsquest.ui.theme.SetupNavGraph
 
 class MainActivity : ComponentActivity() {
+    lateinit var navController: NavHostController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             OlympicsQuestTheme {
+
+                navController = rememberNavController()
+                SetupNavGraph(navController = navController)
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
