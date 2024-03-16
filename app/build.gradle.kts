@@ -73,6 +73,6 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     // csv reader
-    implementation("org.apache.commons:commons-csv:1.5")
+    implementation("org.apache.commons:commons-csv:1.10.0")
     implementation("androidx.graphics:graphics-shapes:1.0.0-alpha05")
 }
