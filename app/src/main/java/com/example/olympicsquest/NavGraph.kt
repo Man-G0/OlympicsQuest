@@ -50,7 +50,7 @@ fun SetupNavGraph(navController: NavHostController){
             val endTime = navBackStackEntry.arguments?.getString("endTime")
             val cession = navBackStackEntry.arguments?.getString("cession")
             val localisation = navBackStackEntry.arguments?.getString("localisation")
-            //SportPage(events,name,startTime,endTime,lowTemp,cession,localisation,navController = navController)
+            //SportPage(events,name,startTime,endTime,cession,localisation,navController = navController)
         }
     }
 }
