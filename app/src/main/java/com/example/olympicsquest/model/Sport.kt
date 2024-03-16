@@ -1,6 +1,7 @@
 package com.example.olympicsquest.model
 
 class Sport(
+
     val name: String,
     val startTime : String,
     val endTime : String,

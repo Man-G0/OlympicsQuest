@@ -56,8 +56,7 @@ class HomePage(navController: NavHostController) : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    BackgroundHomePage()
-                    SetData(viewModel())
+                    ContentHomePage()
                 }
 
             }
@@ -65,42 +64,46 @@ class HomePage(navController: NavHostController) : ComponentActivity() {
     }
 
 
-    @Composable
-    private fun SetData(viewModel: MainViewModel) {
-        when(val result=viewModel.response.value){
-            is DataState.Loading->{
-                Box(modifier = Modifier.fillMaxSize()
-                ){
-                    CircularProgressIndicator()
-                }
+}
+@Composable
+private fun ShowLazyList(sports: MutableList<Sport>) {
+    LazyColumn{
+        items(sports){each ->
+            println(each.name)
+            Button(sport = each)
 
-            }is DataState.Success->{
-                ShowLazyList(result.data)
-            }is DataState.Failure->{
-                Box(modifier = Modifier.fillMaxSize()
-                ){
-                    Text(text= result.message)
-                }
-            }else -> {
-                Box(modifier = Modifier.fillMaxSize()
-                ){
-                    Text(text= "Error Fetching Data")
-                }
-            }
-        }
-    }
-    @Composable
-    private fun ShowLazyList(sports: MutableList<Sport>) {
-        LazyColumn{
-            items(sports){each ->
-                Button(sport = each)
-            }
         }
     }
 }
+@Composable
+fun SetData(viewModel: MainViewModel) {
+    when(val result=viewModel.response.value){
+        is DataState.Loading->{
+            Box(modifier = Modifier.fillMaxSize()
+            ){
+                CircularProgressIndicator()
+            }
 
-
-
+        }is DataState.Success->{
+        ShowLazyList(result.data)
+    }is DataState.Failure->{
+        Box(modifier = Modifier.fillMaxSize()
+        ){
+            Text(text= result.message)
+        }
+    }else -> {
+        Box(modifier = Modifier.fillMaxSize()
+        ){
+            Text(text= "Error Fetching Data")
+        }
+    }
+    }
+}
+@Composable
+fun ContentHomePage(){
+    BackgroundHomePage()
+    SetData(viewModel())
+}
 
 @Composable
 fun BackgroundHomePage(modifier: Modifier = Modifier) {
