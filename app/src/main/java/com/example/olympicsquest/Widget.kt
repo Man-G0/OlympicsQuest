@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -23,8 +22,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 import com.example.olympicsquest.model.Sport
 import com.example.olympicsquest.ui.theme.OlympicsQuestTheme
 
@@ -40,8 +37,7 @@ class Widget : ComponentActivity() {
                 ) {
                     //Greeting2("Android")
                     //ButtonImage(sport = "Escalade")
-                    //Button(Sport("Basketball", "17:30", "16:30","Cession BK301", "Paris"))
-                }
+                    Button(Sport("Basketball", "17:30", "16:30","Cession BK301", "Paris"))               }
             }
         }
     }
@@ -56,54 +52,94 @@ fun Greeting2(name: String, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun ButtonImage(sport : Sport, navController: NavHostController, modifier: Modifier = Modifier){
-    var modifier = Modifier.clickable {
-        navController.navigate(route = "sport_screen/${sport.sport}/${sport.epreuve}/${sport.session}/${sport.date}/${sport.lieu}/${sport.horaire_debut}/${sport.horaire_fin}/${sport.geo_point}") }
-    var image = R.drawable.basketball
+fun ButtonImage(sport : Sport, modifier: Modifier = Modifier){
 
     if(sport.sport == "Basketball" || sport.sport == "Basketball (Phase finale)"){
-        image = R.drawable.basketball
-
+        Image(
+            painter = painterResource(R.drawable.basketball),
+            contentDescription = null,
+            modifier = Modifier
+                .width(285.dp)
+                .height(100.dp)
+        )
     }
     if(sport.sport == "Badminton"){
-        image = R.drawable.badminton
+        Image(
+            painter = painterResource(R.drawable.badminton),
+            contentDescription = null,
+            modifier = Modifier
+                .width(285.dp)
+                .height(100.dp)
+        )
     }
     if(sport.sport == "Archery"){
-        image = R.drawable.tiralarc
-
+        Image(
+            painter = painterResource(R.drawable.tiralarc),
+            contentDescription = null,
+            modifier = Modifier
+                .width(285.dp)
+                .height(100.dp)
+        )
     }
     if(sport.sport == "Athletisme"){
-        image = R.drawable.athletisme
+        Image(
+            painter = painterResource(R.drawable.athletisme),
+            contentDescription = null,
+            modifier = Modifier
+                .width(285.dp)
+                .height(100.dp)
+        )
     }
     if(sport.sport == "Boxe"){
-        image = R.drawable.boxe
+        Image(
+            painter = painterResource(R.drawable.boxe),
+            contentDescription = null,
+            modifier = Modifier
+                .width(285.dp)
+                .height(100.dp)
+        )
     }
     if(sport.sport == "Breaking"){
-        image = R.drawable.breaking
+        Image(
+            painter = painterResource(R.drawable.breaking),
+            contentDescription = null,
+            modifier = Modifier
+                .width(285.dp)
+                .height(100.dp)
+        )
     }
     if(sport.sport == "Cyclisme sur route"){
-        image = R.drawable.cyclismesurroute
-
+        Image(
+            painter = painterResource(R.drawable.cyclismesurroute),
+            contentDescription = null,
+            modifier = Modifier
+                .width(285.dp)
+                .height(100.dp)
+        )
     }
     if(sport.sport == "BMX Freestyle"){
-        image = R.drawable.bmxfreestyle
+        Image(
+            painter = painterResource(R.drawable.bmxfreestyle),
+            contentDescription = null,
+            modifier = Modifier
+                .width(285.dp)
+                .height(100.dp)
+        )
     }
     if(sport.sport == "Escalade"){
-        image = R.drawable.escalade
+        Image(
+            painter = painterResource(R.drawable.escalade),
+            contentDescription = null,
+            modifier = Modifier
+                .width(285.dp)
+                .height(100.dp)
+        )
     }
-    Image(
-        painter = painterResource(image),
-        contentDescription = null,
-        modifier = modifier
-            .width(285.dp)
-            .height(100.dp)
-    )
 }
 @Composable
-fun Button(sport : Sport,navController: NavHostController, modifier: Modifier = Modifier){
+fun Button(sport : Sport, modifier: Modifier = Modifier){
     Box{
-        ButtonImage(sport = sport,navController)
-
+        ButtonImage(sport = sport)
         Column(modifier = Modifier.padding(5.dp)) {
             Text(text = sport.sport,
                 color = Color.White,
@@ -138,10 +174,7 @@ fun Button(sport : Sport,navController: NavHostController, modifier: Modifier = 
 fun GreetingPreview2() {
     OlympicsQuestTheme {
         //Greeting2("Android")
-        lateinit var navController: NavHostController
-        navController = rememberNavController()
-        SetupNavGraph(navController = navController)
-        Button(Sport("20/07/2024", "Basketball","48.862286, 2.313222", "16:30","17:30", "Paris", "Cession BK301"),navController)
+        Button(Sport("20/07/2024", "Basketball","48.862286, 2.313222", "16:30","17:30", "Paris", "Cession BK301"))
         //ButtonImage(sport = "Escalade")
     }
 }
