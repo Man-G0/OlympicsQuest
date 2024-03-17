@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
                     //Greeting("Android")
                     FirebaseApp.initializeApp(this)
                     println("test de print")
-                    ContentHomePage(navController)
+                    ContentHomePage()
                 }
             }
         }

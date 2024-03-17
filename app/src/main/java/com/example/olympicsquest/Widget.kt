@@ -54,7 +54,7 @@ fun Greeting2(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun ButtonImage(sport : Sport, modifier: Modifier = Modifier){
 
-    if(sport.sport == "Basketball" || sport.sport == "Basketball (Phase finale)"){
+    if(sport.sport == "Basketball" || sport.sport == "Basketball (Phase finale)" ||sport.sport == "Basketball 3x3"){
         Image(
             painter = painterResource(R.drawable.basketball),
             contentDescription = null,
