@@ -46,9 +46,13 @@ val Black=Color(0xff000000)
 fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date : String?,lieu : String?,startTime : String?,endTime : String?,geo_point : String?,navController: NavHostController,modifier: Modifier = Modifier) {
     var image = R.drawable.basketball
     var icon = R.drawable.basketballprofile
-    if(sport == "Basketball" || sport == "Basketball (Phase finale)"){
+    if(sport == "Basketball 3x3"){
         image = R.drawable.basketball
-        icon = R.drawable.basketballprofile
+        icon = R.drawable.basketballthreeprofile
+    }
+    if(sport=="Basketball (Phase finale)"){
+        image=R.drawable.basketball
+        icon=R.drawable.basketballprofile
     }
     if(sport == "Badminton"){
         image = R.drawable.badminton
@@ -98,7 +102,8 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             painter = painterResource(image),
             contentDescription = null,
             modifier = Modifier
-                .fillMaxWidth().scale(1.2f)
+                .fillMaxWidth()
+                .scale(1.2f)
                 .background(Color.Black)
                 .height(225.dp)
                 .offset(y = -25.dp)
@@ -106,8 +111,9 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
         Box(modifier.fillMaxSize(),contentAlignment = Alignment.BottomCenter){
             Box(
                 modifier = Modifier
-                    .background(Color.White, RoundedCornerShape(10.dp))
-                    .height(720.dp).fillMaxWidth()
+                    .background(Color.White, RoundedCornerShape(30.dp))
+                    .height(720.dp)
+                    .fillMaxWidth()
 
                 )
         }
@@ -115,32 +121,31 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             text = sport.toString().capitalize(),
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(10.dp, 10.dp),
+                .offset(70.dp, 27.dp),
             style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = paris2024,
                 fontWeight = FontWeight.ExtraBold,
-                color = Black
+                color = Color.White
             )
         )
         Text(
             text = session.toString().capitalize(),
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(30.dp, 50.dp),
+                .offset(70.dp, 75.dp),
             style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = paris2024,
-                fontWeight = FontWeight.ExtraBold,
-                color = Black
+                fontWeight = FontWeight.Normal,
+                color = Color.White
             )
         )
-
         Text(
-            text = epreuve.toString().capitalize(),
+            text = "Epreuve :",
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(10.dp, 20.dp),
+                .offset(17.dp, 330.dp),
             style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = paris2024,
@@ -148,27 +153,67 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
                 color = Black
             )
         )
+        Box(modifier = Modifier.width(360.dp).height(100.dp))
+        {
+            Text(
+                text = epreuve.toString().capitalize(),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .offset(17.dp, 355.dp),
+                style = TextStyle(
+                    fontSize = 20.sp,
+                    fontFamily = paris2024,
+                    fontWeight = FontWeight.Normal,
+                    color = Black
+                )
+            )
+        }
+
         Text(
             text = date.toString().capitalize(),
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(70.dp, 10.dp),
+                .offset(175.dp, 210.dp),
             style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = paris2024,
-                fontWeight = FontWeight.ExtraBold,
+                fontWeight = FontWeight.Normal,
                 color = Black
+            )
+        )
+        Text(
+            text = "Start : ",
+            modifier = Modifier
+                .fillMaxWidth()
+                .offset(70.dp, 50.dp),
+            style = TextStyle(
+                fontSize = 18.sp,
+                fontFamily = paris2024,
+                fontWeight = FontWeight.Normal,
+                color = Color.White
             )
         )
         Text(
             text = startTime.toString(),
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(15.dp, 20.dp),
+                .offset(120.dp, 50.dp),
+            style = TextStyle(
+                fontSize = 18.sp,
+                fontFamily = paris2024,
+                fontWeight = FontWeight.Normal,
+                color = Color.White
+            )
+        )
+        Text(
+            text = "End : ",
+            modifier = Modifier
+                .fillMaxWidth()
+                .offset(175.dp, 260.dp),
             style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = paris2024,
-                fontWeight = FontWeight.ExtraBold,
+                fontWeight = FontWeight.Normal,
                 color = Black
             )
         )
@@ -176,11 +221,11 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             text = endTime.toString(),
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(15.dp, 20.dp),
+                .offset(220.dp, 260.dp),
             style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = paris2024,
-                fontWeight = FontWeight.ExtraBold,
+                fontWeight = FontWeight.Normal,
                 color = Black
             )
         )
@@ -208,20 +253,9 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
                 color = Black
             )
         )
+
         Text(
-            text = "man/women",
-            modifier = Modifier
-                .fillMaxWidth()
-                .offset(175.dp, 210.dp),
-            style = TextStyle(
-                fontSize = 20.sp,
-                fontFamily = paris2024,
-                fontWeight = FontWeight.Normal,
-                color = Black
-            )
-        )
-        Text(
-            text = "Olympics/paralympics",
+            text = "Olympics",
             modifier = Modifier
                 .fillMaxWidth()
                 .offset(175.dp, 235.dp),
@@ -232,23 +266,12 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
                 color = Black
             )
         )
-        Text(
-            text = "Qualifications/finals",
-            modifier = Modifier
-                .fillMaxWidth()
-                .offset(175.dp, 260.dp),
-            style = TextStyle(
-                fontSize = 20.sp,
-                fontFamily = paris2024,
-                fontWeight = FontWeight.Normal,
-                color = Black
-            )
-        )
+
         Text(
             text = "Quests nearby :",
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(17.dp, 355.dp),
+                .offset(17.dp, 450.dp),
             style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = paris2024,
