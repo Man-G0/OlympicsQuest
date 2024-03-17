@@ -67,9 +67,9 @@ class HomePage(navController: NavHostController) : ComponentActivity() {
 }
 @Composable
 private fun ShowLazyList(sports: MutableList<Sport>) {
-    LazyColumn{
+    LazyColumn(Modifier.offset(15.dp)){
         items(sports){each ->
-            println(each.sport)
+
             Button(sport = each)
 
         }

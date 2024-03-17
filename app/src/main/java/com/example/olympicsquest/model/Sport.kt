@@ -4,6 +4,7 @@ class Sport(
 
     val date: String = "",
     val epreuve : String = "",
+    val geo_point : String = "",
     val horaire_debut : String = "",
     val horaire_fin : String = "",
     val lieu : String = "",
@@ -18,6 +19,7 @@ class Sport(
         Lieu: $lieu
         Horaire de début: $horaire_debut
         Horaire de fin: $horaire_fin
+        Geographic point : $geo_point
     """.trimIndent()
     }
 }

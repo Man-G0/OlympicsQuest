@@ -174,7 +174,7 @@ fun Button(sport : Sport, modifier: Modifier = Modifier){
 fun GreetingPreview2() {
     OlympicsQuestTheme {
         //Greeting2("Android")
-        Button(Sport("20/07/2024", "Basketball", "16:30","17:30", "Paris", "Cession BK301"))
+        Button(Sport("20/07/2024", "Basketball","48.862286, 2.313222", "16:30","17:30", "Paris", "Cession BK301"))
         //ButtonImage(sport = "Escalade")
     }
 }
