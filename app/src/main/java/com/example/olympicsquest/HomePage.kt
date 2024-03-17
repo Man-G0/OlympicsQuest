@@ -22,6 +22,7 @@ import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -70,7 +71,7 @@ private fun ShowLazyList(navController: NavHostController) {
         TextField(value = searchText,
             onValueChange = viewModel::onSearchTextChange,
             modifier = Modifier
-                .offset(x= 50.dp,y = 50.dp)
+                .offset(x = 50.dp, y = 50.dp)
                 .background(Color.White, RoundedCornerShape(50.dp))
                 .height(50.dp)
                 .width(300.dp),
@@ -83,14 +84,22 @@ private fun ShowLazyList(navController: NavHostController) {
                 .fillMaxWidth()
         )
         {
-            LazyColumn(
-                Modifier
-                    .offset(30.dp)
-                    .offset(x = 30.dp, y = 20.dp)){
-                items(filteredSports){each ->
+            if(isSearching){
+                Box(modifier = Modifier.fillMaxSize()){
+                    CircularProgressIndicator(
+                        modifier = Modifier.align(Alignment.Center)
+                    )
+                }
+            }else{
+                LazyColumn(
+                    Modifier
+                        .offset(30.dp)
+                        .offset(x = 30.dp, y = 20.dp)){
+                    items(filteredSports){each ->
 
-                    Button(sport = each, navController)
+                        Button(sport = each, navController)
 
+                    }
                 }
             }
 
@@ -105,7 +114,9 @@ fun SetData(viewModel: MainViewModel,navController: NavHostController ) {
         is DataState.Loading->{
             Box(modifier = Modifier.fillMaxSize()
             ){
-                CircularProgressIndicator()
+                CircularProgressIndicator(
+                    modifier = Modifier.align(Alignment.Center)
+                )
             }
 
         }is DataState.Success->{

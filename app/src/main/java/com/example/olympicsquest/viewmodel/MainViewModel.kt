@@ -12,13 +12,18 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.update
 
+@OptIn(FlowPreview::class)
 class MainViewModel : ViewModel() {
     val response : MutableState<DataState> = mutableStateOf(DataState.Empty)
     private val _searchText = MutableStateFlow("")
@@ -29,6 +34,8 @@ class MainViewModel : ViewModel() {
     private val _sports = MutableStateFlow(fetchtempList())
     val Sports  = _sports.map { it.toList() }
     val sports = searchText
+        .debounce(500L)
+        .onEach { _isSearching.update { true } }
         .combine(Sports){ text, sports ->
             if(text.isBlank()){
                 sports
@@ -38,6 +45,7 @@ class MainViewModel : ViewModel() {
                 }
             }
         }
+        .onEach { _isSearching.update { false } }
         .stateIn(
             viewModelScope,
             SharingStarted.WhileSubscribed(5000),
