@@ -13,12 +13,11 @@ fun SetupNavGraph(navController: NavHostController){
         composable(
             route = Screen.Home.route
         ){
-            HomePage(navController = navController)
+            ContentHomePage(navController = navController)
         }
         composable(
             route = Screen.SportPage.route,
             arguments = listOf(
-
                 navArgument(name = "sport")
                 {
                     type = NavType.StringType

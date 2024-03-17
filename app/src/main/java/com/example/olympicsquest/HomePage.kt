@@ -1,7 +1,6 @@
 package com.example.olympicsquest
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -11,46 +10,30 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import android.content.res.Resources
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.platform.LocalContext
-import androidx.core.content.res.ResourcesCompat
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
-import com.example.olympicsquest.model.Sport
 import com.example.olympicsquest.sealed.DataState
 import com.example.olympicsquest.ui.theme.OlympicsQuestTheme
 import com.example.olympicsquest.viewmodel.MainViewModel
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import java.io.BufferedReader
-import java.io.File
-import java.io.IOException
-import java.io.InputStreamReader
-import java.nio.charset.Charset
-import com.google.firebase.database.*
-import androidx.lifecycle.viewmodel.compose.viewModel
 
 class HomePage(navController: NavHostController) : ComponentActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -60,7 +43,7 @@ class HomePage(navController: NavHostController) : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ContentHomePage()
+                    //ContentHomePage(navController = navController)
                 }
 
             }
@@ -70,7 +53,7 @@ class HomePage(navController: NavHostController) : ComponentActivity() {
 
 }
 @Composable
-private fun ShowLazyList() {
+private fun ShowLazyList(navController: NavHostController) {
     val viewModel = viewModel<MainViewModel>()
     val searchText by viewModel.searchText.collectAsState()
     val filteredSports by viewModel.sports.collectAsState()
@@ -106,7 +89,7 @@ private fun ShowLazyList() {
                     .offset(x = 30.dp, y = 20.dp)){
                 items(filteredSports){each ->
 
-                    Button(sport = each)
+                    Button(sport = each, navController)
 
                 }
             }
@@ -117,7 +100,7 @@ private fun ShowLazyList() {
 
 }
 @Composable
-fun SetData(viewModel: MainViewModel) {
+fun SetData(viewModel: MainViewModel,navController: NavHostController ) {
     when(val result=viewModel.response.value){
         is DataState.Loading->{
             Box(modifier = Modifier.fillMaxSize()
@@ -126,7 +109,7 @@ fun SetData(viewModel: MainViewModel) {
             }
 
         }is DataState.Success->{
-        ShowLazyList()
+        ShowLazyList(navController)
     }is DataState.Failure->{
         Box(modifier = Modifier.fillMaxSize()
         ){
@@ -141,9 +124,9 @@ fun SetData(viewModel: MainViewModel) {
     }
 }
 @Composable
-fun ContentHomePage(){
+fun ContentHomePage(navController: NavHostController){
 
-    SetData(viewModel())
+    SetData(viewModel(),navController)
 }
 //je veux push
 
