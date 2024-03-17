@@ -87,8 +87,8 @@ private fun ShowLazyList() {
         TextField(value = searchText,
             onValueChange = viewModel::onSearchTextChange,
             modifier = Modifier
-                .offset(y = 50.dp)
-                .background(Color.White, RoundedCornerShape(30.dp))
+                .offset(x= 50.dp,y = 50.dp)
+                .background(Color.White, RoundedCornerShape(50.dp))
                 .height(50.dp)
                 .width(300.dp),
             placeholder = {Text(text = "Search...")})
