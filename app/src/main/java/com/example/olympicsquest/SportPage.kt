@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.example.olympicsquest
 
 import androidx.activity.ComponentActivity
@@ -14,8 +16,19 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ExposedDropdownMenuBox
+import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Canvas
@@ -211,11 +224,55 @@ fun BackgroundSportPage(modifier: Modifier = Modifier) {
 
         )
         SportProfileImage(image = "basket")
+
+    }
+    //Component_Place(text = Place("Arc de Triomphe","Place de l'étoile","4.5/5","Historical Monument"), image ="arche" )
+    //DropDown()
+
+
+}
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun DropDown(){
+    val list = listOf("One", "Two", "Three", "Four", "Five")
+
+    var selectedText by remember { mutableStateOf(list[0]) }
+
+    var isExpanded by remember {
+        mutableStateOf(false)
     }
 
-
-
-
+    Box(
+    modifier = Modifier
+        .width(100.dp)
+        .height(50.dp)
+        .offset(15.dp, 8.dp)
+    ) { ExposedDropdownMenuBox(
+        expanded = isExpanded,
+        onExpandedChange = { isExpanded = !isExpanded}
+        ) {
+            TextField(modifier=Modifier.menuAnchor(),value  = selectedText, onValueChange = {}, readOnly = true, trailingIcon ={ExposedDropdownMenuDefaults.TrailingIcon(
+            expanded = isExpanded)}
+            )
+            ExposedDropdownMenu(expanded = isExpanded, onDismissRequest = { isExpanded=false}) {
+                list.forEachIndexed { index,text ->
+                    DropdownMenuItem(
+                        text={Text(text=text, modifier = Modifier.offset(2.dp,2.dp),style = TextStyle(
+                                fontSize = 20.sp,//faire class avec nom pour mettre bonne endroit taille et font
+                            fontFamily = paris2024,
+                            fontWeight = FontWeight.Normal,
+                            color = Black))},
+                        onClick = {
+                            selectedText=list[index]
+                            isExpanded = false
+                        },
+                        contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding
+                    )
+                }
+            
+            }
+        }
+    }
 }
 
 
