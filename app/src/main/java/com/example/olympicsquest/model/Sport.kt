@@ -22,4 +22,21 @@ class Sport(
         Geographic point : $geo_point
     """.trimIndent()
     }
+    fun doesMatchSearchQuery(query: String): Boolean{
+        val matchingCombination = listOf(
+            "$date",
+            "$horaire_debut",
+            "${horaire_debut.first()}",
+            "$horaire_fin",
+            "$lieu",
+            "${lieu.first()}",
+            "$session",
+            "${session.first()}",
+            "$sport",
+            "${sport.first()}",
+        )
+        return matchingCombination.any {
+            it.contains(query, ignoreCase = true)
+        }
+    }
 }
