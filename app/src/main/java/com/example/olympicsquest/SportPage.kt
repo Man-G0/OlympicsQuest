@@ -4,7 +4,9 @@ package com.example.olympicsquest
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
@@ -22,7 +24,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -36,119 +40,52 @@ import androidx.navigation.compose.rememberNavController
 
 val Black=Color(0xff000000)
 
-@Composable
-fun SportProfileImage(image: String, modifier: Modifier=Modifier) {
 
-    if (image == "basket") {
-        Image(
-            painter = painterResource(R.drawable.basketballprofile),
-            contentDescription = null, contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .size(130.dp)
-                .offset(x = 22.dp, y = 160.dp)
-        )
-    } else if (image == "athletisme") {
-        Image(
-            painter = painterResource(R.drawable.athletismeprofile),
-            contentDescription = null, contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .size(130.dp)
-                .offset(x = 22.dp, y = 160.dp)
-        )
-    } else if (image == "tir a l'arc") {
-        Image(
-            painter = painterResource(R.drawable.arcprofile),
-            contentDescription = null, contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .size(130.dp)
-                .offset(x = 22.dp, y = 160.dp)
-        )
-    } else if (image == "badminton") {
-        Image(
-            painter = painterResource(R.drawable.badmintonprofile),
-            contentDescription = null, contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .size(130.dp)
-                .offset(x = 22.dp, y = 160.dp)
-        )
-    } else if (image == "bmx") {
-        Image(
-            painter = painterResource(R.drawable.bmxprofile),
-            contentDescription = null, contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .size(130.dp)
-                .offset(x = 22.dp, y = 160.dp)
-        )
-    } else if (image == "boxe") {
-        Image(
-            painter = painterResource(R.drawable.boxeprofile),
-            contentDescription = null, contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .size(130.dp)
-                .offset(x = 22.dp, y = 160.dp)
-        )
-    } else if (image == "break") {
-        Image(
-            painter = painterResource(R.drawable.breakingprofile),
-            contentDescription = null, contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .size(130.dp)
-                .offset(x = 22.dp, y = 160.dp)
-        )
-    } else if (image == "cyclisme") {
-        Image(
-            painter = painterResource(R.drawable.cyclismeprofile),
-            contentDescription = null, contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .size(130.dp)
-                .offset(x = 22.dp, y = 160.dp)
-        )
-    }
-    else if(image=="escalade")
-    {
-        Image(
-            painter = painterResource(R.drawable.escaladeprofile),
-            contentDescription = null,contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .size(130.dp)
-                .offset(x = 22.dp, y = 160.dp)
-        )
-    }
-}
 
 @Composable
 fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date : String?,lieu : String?,startTime : String?,endTime : String?,geo_point : String?,navController: NavHostController,modifier: Modifier = Modifier) {
     var image = R.drawable.basketball
+    var icon = R.drawable.basketballprofile
     if(sport == "Basketball" || sport == "Basketball (Phase finale)"){
         image = R.drawable.basketball
-
+        icon = R.drawable.basketballprofile
     }
     if(sport == "Badminton"){
         image = R.drawable.badminton
+        icon = R.drawable.badmintonprofile
     }
     if(sport == "Archery"){
         image = R.drawable.tiralarc
-
+        icon = R.drawable.tiralarcprofile
     }
     if(sport == "Athletisme"){
         image = R.drawable.athletisme
+        icon = R.drawable.athletismeprofile
     }
     if(sport == "Boxe"){
         image = R.drawable.boxe
+        icon = R.drawable.boxeprofile
     }
     if(sport == "Breaking"){
         image = R.drawable.breaking
+
+        icon = R.drawable.breakingprofile
     }
     if(sport == "Cyclisme sur route"){
         image = R.drawable.cyclismesurroute
 
+        icon = R.drawable.cyclismeprofile
+
     }
     if(sport == "BMX Freestyle"){
         image = R.drawable.bmxfreestyle
+        icon = R.drawable.bmxprofile
     }
     if(sport == "Escalade"){
         image = R.drawable.escalade
+        icon = R.drawable.escaladeprofile
     }
+
     Image(
         painter = painterResource(image),
         contentDescription = null,
@@ -156,22 +93,96 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             .width(285.dp)
             .height(100.dp)
     )
-    Box {
+    Box(Modifier.fillMaxSize()) {
         Image(
             painter = painterResource(image),
             contentDescription = null,
             modifier = Modifier
-                .fillMaxWidth()
+                .fillMaxWidth().scale(1.2f)
                 .background(Color.Black)
                 .height(225.dp)
                 .offset(y = -25.dp)
         )
-        Box(
+        Box(modifier.fillMaxSize(),contentAlignment = Alignment.BottomCenter){
+            Box(
+                modifier = Modifier
+                    .background(Color.White, RoundedCornerShape(10.dp))
+                    .height(720.dp).fillMaxWidth()
+
+                )
+        }
+        Text(
+            text = sport.toString().capitalize(),
             modifier = Modifier
-                .offset(y = 130.dp)
-                .background(Color.White, RoundedCornerShape(50.dp))
-                .height(675.dp)
                 .fillMaxWidth()
+                .offset(10.dp, 10.dp),
+            style = TextStyle(
+                fontSize = 20.sp,
+                fontFamily = paris2024,
+                fontWeight = FontWeight.ExtraBold,
+                color = Black
+            )
+        )
+        Text(
+            text = session.toString().capitalize(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .offset(30.dp, 50.dp),
+            style = TextStyle(
+                fontSize = 20.sp,
+                fontFamily = paris2024,
+                fontWeight = FontWeight.ExtraBold,
+                color = Black
+            )
+        )
+
+        Text(
+            text = epreuve.toString().capitalize(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .offset(10.dp, 20.dp),
+            style = TextStyle(
+                fontSize = 20.sp,
+                fontFamily = paris2024,
+                fontWeight = FontWeight.ExtraBold,
+                color = Black
+            )
+        )
+        Text(
+            text = date.toString().capitalize(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .offset(70.dp, 10.dp),
+            style = TextStyle(
+                fontSize = 20.sp,
+                fontFamily = paris2024,
+                fontWeight = FontWeight.ExtraBold,
+                color = Black
+            )
+        )
+        Text(
+            text = startTime.toString(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .offset(15.dp, 20.dp),
+            style = TextStyle(
+                fontSize = 20.sp,
+                fontFamily = paris2024,
+                fontWeight = FontWeight.ExtraBold,
+                color = Black
+            )
+        )
+        Text(
+            text = endTime.toString(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .offset(15.dp, 20.dp),
+            style = TextStyle(
+                fontSize = 20.sp,
+                fontFamily = paris2024,
+                fontWeight = FontWeight.ExtraBold,
+                color = Black
+            )
         )
         Text(
             text = "Informations : ",
@@ -251,9 +262,17 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             modifier = Modifier
                 .size(40.dp)
                 .offset(x = 20.dp, y = 20.dp)
+                .clickable { navController.popBackStack() }
 
         )
-        SportProfileImage(image = "basket")
+        Image(
+            painter = painterResource(icon),
+            contentDescription = null,contentScale = ContentScale.Crop,
+            modifier = Modifier
+                .size(130.dp)
+                .offset(x = 22.dp, y = 160.dp)
+        )
+        //SportProfileImage(image = sport.toString())
 
     }
     //Component_Place(text = Place("Arc de Triomphe","Place de l'étoile","4.5/5","Historical Monument"), image ="arche" )
@@ -310,8 +329,7 @@ fun DropDown(){
 @Preview(showBackground=true)
 @Composable
 fun Sport_Page_Preview(){
-    lateinit var navController: NavHostController
+    var navController: NavHostController
     navController = rememberNavController()
-    SetupNavGraph(navController = navController)
     BackgroundSportPage("basket", "Finals", "Session","01/01/24","Parc des Princes","14h15","16h","2.253076, 48.841319", navController)
 }

@@ -59,7 +59,9 @@ private fun ShowLazyList(navController: NavHostController) {
     val searchText by viewModel.searchText.collectAsState()
     val filteredSports by viewModel.sports.collectAsState()
     val isSearching by viewModel.isSearching.collectAsState()
-    Box{
+
+
+    Box(Modifier.fillMaxSize()){
         Image(
             painter = painterResource(R.drawable.jo),
             contentDescription = null,

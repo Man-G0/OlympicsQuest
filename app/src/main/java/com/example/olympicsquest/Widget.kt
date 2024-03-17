@@ -59,7 +59,15 @@ fun Greeting2(name: String, modifier: Modifier = Modifier) {
 fun ButtonImage(sport : Sport, navController: NavHostController, modifier: Modifier = Modifier){
     var modifier = Modifier.clickable {
         var date = sport.date.replace('/','-')
-        var road = "sport_screen/${sport.sport}/${sport.epreuve}/${sport.session}/${date}/${sport.lieu}/${sport.horaire_debut}/${sport.horaire_fin}/${sport.geo_point}"
+        var name = sport.sport
+        var epreuve = sport.epreuve
+        var session = sport.session
+        var lieu = sport.lieu
+        var debut = sport.horaire_debut
+        var fin = sport.horaire_fin
+        var geo = sport.geo_point
+        var road = "sport_screen/$name/$epreuve/$session/$date/$lieu/$debut/$fin/$geo"
+        //var road = "sport_screen"
         navController.navigate(route = road) }
     var image = R.drawable.basketball
 

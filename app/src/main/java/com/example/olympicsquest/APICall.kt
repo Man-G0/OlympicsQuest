@@ -33,7 +33,7 @@ data class TouristSite(
 suspend fun fetchDataFromApi(apiURLend: String): List<TouristSite>? = withContext(Dispatchers.IO) {
     val client = OkHttpClient()
     val request = Request.Builder()
-        .url("https://data.iledefrance.fr/api/explore/v2.1/catalog/datasets/principaux-sites-touristiques-en-ile-de-france0/records?limit=20")
+        .url(apiURLend)
         .build()
 
     try {
