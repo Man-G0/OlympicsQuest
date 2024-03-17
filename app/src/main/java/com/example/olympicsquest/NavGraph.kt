@@ -19,7 +19,23 @@ fun SetupNavGraph(navController: NavHostController){
             route = Screen.SportPage.route,
             arguments = listOf(
 
-                navArgument(name = "name")
+                navArgument(name = "sport")
+                {
+                    type = NavType.StringType
+                },
+                navArgument(name = "epreuve")
+                {
+                    type = NavType.StringType
+                },
+                navArgument(name = "session")
+                {
+                    type = NavType.StringType
+                },
+                navArgument(name = "date")
+                {
+                    type = NavType.StringType
+                },
+                navArgument(name = "lieu")
                 {
                     type = NavType.StringType
                 },
@@ -31,24 +47,22 @@ fun SetupNavGraph(navController: NavHostController){
                 {
                     type = NavType.StringType
                 },
-                navArgument(name = "cession")
-                {
-                    type = NavType.StringType
-                },
-                navArgument(name = "localisation")
+                navArgument(name = "geo_point")
                 {
                     type = NavType.StringType
                 }
 
             )
         ) {navBackStackEntry ->
-            val events = navBackStackEntry.arguments?.getString("cityName")
-            val name = navBackStackEntry.arguments?.getString("name")
+            val sport = navBackStackEntry.arguments?.getString("sport")
+            val epreuve = navBackStackEntry.arguments?.getString("epreuve")
+            val session = navBackStackEntry.arguments?.getString("session")
+            val date = navBackStackEntry.arguments?.getString("date")
+            val lieu = navBackStackEntry.arguments?.getString("lieu")
             val startTime = navBackStackEntry.arguments?.getString("startTime")
             val endTime = navBackStackEntry.arguments?.getString("endTime")
-            val cession = navBackStackEntry.arguments?.getString("cession")
-            val localisation = navBackStackEntry.arguments?.getString("localisation")
-            //SportPage(events,name,startTime,endTime,cession,localisation,navController = navController)
+            val geo_point = navBackStackEntry.arguments?.getString("geo_point")
+            BackgroundSportPage(sport,epreuve,session,date,lieu,startTime,endTime,geo_point,navController = navController)
 
 
         }
