@@ -160,11 +160,3 @@ fun ContentHomePage(){
     SetData(viewModel())
 }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview3() {
-    OlympicsQuestTheme {
-        //Greeting3("Android")
-        //BackgroundHomePage()
-    }
-}
