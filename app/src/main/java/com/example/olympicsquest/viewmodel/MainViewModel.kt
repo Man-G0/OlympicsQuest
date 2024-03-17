@@ -1,10 +1,12 @@
 package com.example.olympicsquest.viewmodel
 
+import android.app.Application
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.example.olympicsquest.model.Sport
 import com.example.olympicsquest.sealed.DataState
+import com.google.firebase.FirebaseApp
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -13,6 +15,7 @@ import com.google.firebase.database.ValueEventListener
 class MainViewModel : ViewModel() {
     val response : MutableState<DataState> = mutableStateOf(DataState.Empty)
     init {
+
         fetchDataFromFirebase()
     }
 

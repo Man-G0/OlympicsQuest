@@ -54,7 +54,7 @@ fun Greeting2(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun ButtonImage(sport : Sport, modifier: Modifier = Modifier){
 
-    if(sport.name == "Basketball"){
+    if(sport.sport == "Basketball" || sport.sport == "Basketball (Phase finale)"){
         Image(
             painter = painterResource(R.drawable.basketball),
             contentDescription = null,
@@ -63,7 +63,7 @@ fun ButtonImage(sport : Sport, modifier: Modifier = Modifier){
                 .height(100.dp)
         )
     }
-    if(sport.name == "Badminton"){
+    if(sport.sport == "Badminton"){
         Image(
             painter = painterResource(R.drawable.badminton),
             contentDescription = null,
@@ -72,7 +72,7 @@ fun ButtonImage(sport : Sport, modifier: Modifier = Modifier){
                 .height(100.dp)
         )
     }
-    if(sport.name == "Tir à l'arc"){
+    if(sport.sport == "Archery"){
         Image(
             painter = painterResource(R.drawable.tiralarc),
             contentDescription = null,
@@ -81,7 +81,7 @@ fun ButtonImage(sport : Sport, modifier: Modifier = Modifier){
                 .height(100.dp)
         )
     }
-    if(sport.name == "Athletisme"){
+    if(sport.sport == "Athletisme"){
         Image(
             painter = painterResource(R.drawable.athletisme),
             contentDescription = null,
@@ -90,7 +90,7 @@ fun ButtonImage(sport : Sport, modifier: Modifier = Modifier){
                 .height(100.dp)
         )
     }
-    if(sport.name == "Boxe"){
+    if(sport.sport == "Boxe"){
         Image(
             painter = painterResource(R.drawable.boxe),
             contentDescription = null,
@@ -99,7 +99,7 @@ fun ButtonImage(sport : Sport, modifier: Modifier = Modifier){
                 .height(100.dp)
         )
     }
-    if(sport.name == "Breaking"){
+    if(sport.sport == "Breaking"){
         Image(
             painter = painterResource(R.drawable.breaking),
             contentDescription = null,
@@ -108,7 +108,7 @@ fun ButtonImage(sport : Sport, modifier: Modifier = Modifier){
                 .height(100.dp)
         )
     }
-    if(sport.name == "Cyclisme sur route"){
+    if(sport.sport == "Cyclisme sur route"){
         Image(
             painter = painterResource(R.drawable.cyclismesurroute),
             contentDescription = null,
@@ -117,7 +117,7 @@ fun ButtonImage(sport : Sport, modifier: Modifier = Modifier){
                 .height(100.dp)
         )
     }
-    if(sport.name == "BMX fresstyle"){
+    if(sport.sport == "BMX Freestyle"){
         Image(
             painter = painterResource(R.drawable.bmxfreestyle),
             contentDescription = null,
@@ -126,7 +126,7 @@ fun ButtonImage(sport : Sport, modifier: Modifier = Modifier){
                 .height(100.dp)
         )
     }
-    if(sport.name == "Escalade"){
+    if(sport.sport == "Escalade"){
         Image(
             painter = painterResource(R.drawable.escalade),
             contentDescription = null,
@@ -141,7 +141,7 @@ fun Button(sport : Sport, modifier: Modifier = Modifier){
     Box{
         ButtonImage(sport = sport)
         Column(modifier = Modifier.padding(5.dp)) {
-            Text(text = sport.name,
+            Text(text = sport.sport,
                 color = Color.White,
                 fontFamily = paris2024,
                 fontSize = 23.sp,
@@ -149,7 +149,7 @@ fun Button(sport : Sport, modifier: Modifier = Modifier){
                 //letterSpacing = 0.37.sp
                 modifier = modifier.offset(x=15.dp)
             )
-            Text(text = sport.startTime,
+            Text(text = sport.horaire_debut,
                 color = Color.White,
                 fontFamily = paris2024,
                 fontSize = 17.sp,
@@ -158,7 +158,7 @@ fun Button(sport : Sport, modifier: Modifier = Modifier){
                 modifier = modifier.offset(x=15.dp)
                 )
             Spacer(modifier = Modifier.height(12.dp))
-            Text(text = sport.cession,
+            Text(text = sport.session,
                 color = Color.White,
                 fontFamily = paris2024,
                 fontSize = 15.sp,
@@ -174,7 +174,7 @@ fun Button(sport : Sport, modifier: Modifier = Modifier){
 fun GreetingPreview2() {
     OlympicsQuestTheme {
         //Greeting2("Android")
-        Button(Sport("Basketball", "17:30", "16:30","Cession BK301", "Paris"))
+        Button(Sport("20/07/2024", "Basketball", "16:30","17:30", "Paris", "Cession BK301"))
         //ButtonImage(sport = "Escalade")
     }
 }

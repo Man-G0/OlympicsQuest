@@ -69,7 +69,7 @@ class HomePage(navController: NavHostController) : ComponentActivity() {
 private fun ShowLazyList(sports: MutableList<Sport>) {
     LazyColumn{
         items(sports){each ->
-            println(each.name)
+            println(each.sport)
             Button(sport = each)
 
         }

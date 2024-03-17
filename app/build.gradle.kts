@@ -1,7 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("com.google.gms.google-services") version "4.4.1" apply false
+    id("com.google.gms.google-services")
+    //id("com.google.gms.google-services") version "4.4.1" apply false
 }
 
 android {
@@ -94,7 +95,8 @@ dependencies {
     // When using the BoM, don't specify versions in Firebase dependencies
     implementation("com.google.firebase:firebase-analytics")
 
-
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-firestore")
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
 }

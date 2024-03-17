@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "513205418427",
+    "firebase_url": "https://olympicquest-70b1c-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "olympicquest-70b1c",
+    "storage_bucket": "olympicquest-70b1c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:513205418427:android:4d892ada9e04c97d056c9e",
+        "android_client_info": {
+          "package_name": "com.example.olympicsquest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_PNXzm1M3Z7igKywaOKkUV1JneUhj0Co"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -18,6 +18,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.olympicsquest.ui.theme.OlympicsQuestTheme
 import com.example.olympicsquest.viewmodel.MainViewModel
+import com.google.firebase.FirebaseApp
 
 class MainActivity : ComponentActivity() {
     lateinit var navController: NavHostController
@@ -29,12 +30,14 @@ class MainActivity : ComponentActivity() {
 
                 navController = rememberNavController()
                 SetupNavGraph(navController = navController)
+
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ){
                     //Greeting("Android")
+                    FirebaseApp.initializeApp(this)
                     println("test de print")
                     ContentHomePage()
                 }
