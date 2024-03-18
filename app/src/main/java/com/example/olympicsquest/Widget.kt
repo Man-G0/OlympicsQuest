@@ -18,6 +18,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -59,13 +60,13 @@ fun Greeting2(name: String, modifier: Modifier = Modifier) {
 fun ButtonImage(sport : Sport, navController: NavHostController, modifier: Modifier = Modifier){
     var modifier = Modifier.clickable {
         var date = sport.date.replace('/','-')
-        var name = sport.sport
-        var epreuve = sport.epreuve
-        var session = sport.session
-        var lieu = sport.lieu
-        var debut = sport.horaire_debut
-        var fin = sport.horaire_fin
-        var geo = sport.geo_point
+        var name = sport.sport.replace('/','-')
+        var epreuve = sport.epreuve.replace('/','-')
+        var session = sport.session.replace('/','-')
+        var lieu = sport.lieu.replace('/','-')
+        var debut = sport.horaire_debut.replace('/','-')
+        var fin = sport.horaire_fin.replace('/','-')
+        var geo = sport.geo_point.replace('/','-')
         var road = "sport_screen/$name/$epreuve/$session/$date/$lieu/$debut/$fin/$geo"
         //var road = "sport_screen"
         navController.navigate(route = road) }
@@ -107,6 +108,7 @@ fun ButtonImage(sport : Sport, navController: NavHostController, modifier: Modif
         modifier = modifier
             .width(285.dp)
             .height(100.dp)
+            .scale(1.2f)
     )
 }
 @Composable
@@ -149,8 +151,7 @@ fun GreetingPreview2() {
         //Greeting2("Android")
         lateinit var navController: NavHostController
         navController = rememberNavController()
-        SetupNavGraph(navController = navController)
-        Button(Sport("20/07/2024", "Basketball","48.862286, 2.313222", "16:30","17:30", "Paris", "Cession BK301"),navController)
+        Button(Sport("20/07/2024", "Basketball","48.862286, 2.313222", "16:30","17:30", "Paris", "Cession BK301","BasketBall"),navController)
         //ButtonImage(sport = "Escalade")
     }
 }

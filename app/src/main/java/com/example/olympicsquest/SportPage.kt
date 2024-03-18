@@ -37,6 +37,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.olympicsquest.model.Sport
 
 val Black=Color(0xff000000)
 
@@ -98,12 +99,13 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             .height(100.dp)
     )
     Box(Modifier.fillMaxSize()) {
+
         Image(
             painter = painterResource(image),
             contentDescription = null,
             modifier = Modifier
                 .fillMaxWidth()
-                .scale(1.2f)
+                .scale(1.3f)
                 .background(Color.Black)
                 .height(225.dp)
                 .offset(y = -25.dp)
@@ -271,7 +273,7 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             text = "Quests nearby :",
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(17.dp, 450.dp),
+                .offset(17.dp, 470.dp),
             style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = paris2024,
@@ -298,7 +300,10 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
         //SportProfileImage(image = sport.toString())
 
     }
-    //Component_Place(text = Place("Arc de Triomphe","Place de l'étoile","4.5/5","Historical Monument"), image ="arche" )
+    Box(modifier.offset(x = 22.dp, y = 200.dp)){
+        ShowLazyListActivities( Sport(date.toString(),epreuve.toString(),geo_point.toString(),startTime.toString(),endTime.toString(),lieu.toString(),session.toString(),sport.toString()),2,  navController)
+    }
+   //Component_Place(text = Place("Arc de Triomphe","Place de l'étoile","4.5/5","Historical Monument"), image ="arche" )
     //DropDown()
 
 

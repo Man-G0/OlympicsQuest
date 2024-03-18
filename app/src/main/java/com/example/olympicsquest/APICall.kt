@@ -1,5 +1,22 @@
 package com.example.olympicsquest
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.scale
+import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import com.example.olympicsquest.model.Sport
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -30,7 +47,7 @@ data class TouristSite(
     val objectid: String
 )
 
-suspend fun fetchDataFromApi(apiURLend: String): List<TouristSite>? = withContext(Dispatchers.IO) {
+suspend fun fetchDataFromApi(apiURLend: String): List<TouristSite> = withContext(Dispatchers.IO) {
     val client = OkHttpClient()
     val request = Request.Builder()
         .url(apiURLend)
@@ -62,11 +79,11 @@ suspend fun fetchDataFromApi(apiURLend: String): List<TouristSite>? = withContex
                 correction.add(correct)
             }
             //return@use correction
-            return@use correction?.mapNotNull { gson.fromJson(it, TouristSite::class.java) }
+            return@use correction.mapNotNull { gson.fromJson(it, TouristSite::class.java) }
         }
     } catch (e: IOException) {
         e.printStackTrace()
-        return@withContext null
+        return@withContext emptyList()
     }
 }
 
@@ -85,13 +102,49 @@ fun printTouristSites(touristSites: List<TouristSite>?) {
     }
 }
 
-fun FetchNearTouristSitesFromAPI(geo_point : String,distance : Int) {
+fun FetchNearTouristSitesFromAPI(geo_point : String,distance : Int):List <TouristSite> {
+    var touristSites = listOf <TouristSite>()
     kotlinx.coroutines.runBlocking {
         var index = geo_point.indexOf(", ")
         var lat = geo_point.substring(0,index)
         var lon = geo_point.substring(index+2)
         var url = "https://data.iledefrance.fr/api/explore/v2.1/catalog/datasets/principaux-sites-touristiques-en-ile-de-france0/records?where=distance(geo_point_2d%2C%20geom%27POINT("+lon+"%20"+lat+")%27%2C%20"+distance+"km)&limit=20"
-        val touristSites = fetchDataFromApi(url)
+        touristSites = fetchDataFromApi(url)
         printTouristSites(touristSites)
+    }
+    return touristSites
+}
+@Composable
+fun ShowLazyListActivities(sport : Sport, distance : Int, navController: NavHostController) {
+
+    var coordinates = sport.geo_point
+    var nearTouristSites = FetchNearTouristSitesFromAPI(coordinates, distance)
+    var dist = distance
+    while(nearTouristSites.isNullOrEmpty() ){
+        nearTouristSites = FetchNearTouristSitesFromAPI(coordinates, dist++)
+    }
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .offset(y = 30.dp)){
+        LazyRow(state = rememberLazyListState(), modifier = Modifier
+            //.background(Color.Blue)
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState()), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(20.dp), contentPadding = PaddingValues(start =  25.dp, end = 50.dp)){
+
+            items(nearTouristSites){each ->
+                var image = ""
+                if(each.typo_niv3 == "Offices du tourisme et syndicats d'initiative" ||each.typo_niv3 == "Centre de congrès et parc d'exposition"||each.typo_niv3 =="Musée et écomusée"||each.typo_niv3 =="Diffusion de l'art (autre que musée)"){
+                    image = "museum"
+                }
+                else if(each.typo_niv3 =="Diffusion du spectacle vivant"||each.typo_niv3 == "Espace de loisirs, espace récréatif"){
+                    image = "ticket"
+                }
+                else{
+                    image = "arche"
+                }
+
+                Component_Place(each, image, navController,Modifier.scale(1.2f))
+            }
+        }
     }
 }

@@ -5,7 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -82,8 +84,7 @@ private fun ShowLazyList(navController: NavHostController) {
             modifier = Modifier
                 .offset(y = 150.dp)
                 .background(Color.White, RoundedCornerShape(30.dp))
-                .height(675.dp)
-                .fillMaxWidth()
+                .fillMaxSize()
         )
         {
             if(isSearching){
@@ -93,10 +94,11 @@ private fun ShowLazyList(navController: NavHostController) {
                     )
                 }
             }else{
-                LazyColumn(
-                    Modifier
-                        .offset(30.dp)
-                        .offset(x = 30.dp, y = 20.dp)){
+                LazyColumn(modifier = Modifier.fillMaxSize().offset(y= 30.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(30.dp),
+                    contentPadding = PaddingValues(top = 30.dp, bottom = 200.dp),
+                ){
                     items(filteredSports){each ->
 
                         Button(sport = each, navController)
@@ -145,7 +147,7 @@ fun ContentHomePage(navController: NavHostController){
 
 @Composable
 fun BackgroundHomePage(modifier: Modifier = Modifier) {
-    Box{
+    Box(Modifier.fillMaxSize()){
         Image(
             painter = painterResource(R.drawable.jo),
             contentDescription = null,
@@ -154,13 +156,15 @@ fun BackgroundHomePage(modifier: Modifier = Modifier) {
                 .height(225.dp)
                 .offset(y = -25.dp)
         )
-        Box(
-            modifier = Modifier
-                .offset(y = 150.dp)
-                .background(Color.White, RoundedCornerShape(30.dp))
-                .height(675.dp)
-                .fillMaxWidth()
-                    )
+        Box(modifier.fillMaxSize(), contentAlignment = Alignment.BottomCenter){
+            Box(
+                modifier = Modifier
+                    .background(Color.White, RoundedCornerShape(30.dp))
+                    .height(700.dp)
+                    .fillMaxWidth()
+            )
+        }
+
 
     }
 }

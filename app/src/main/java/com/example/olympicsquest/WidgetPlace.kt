@@ -1,12 +1,9 @@
 package com.example.olympicsquest
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
@@ -20,8 +17,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 
-data class Place(val name: String, val address: String, val description: String)
+data class Place(val name: String, val address: String, val ratings: String, val description: String)
 
 @Composable
 fun IconPlace(image: String, modifier: Modifier=Modifier)
@@ -31,71 +30,75 @@ fun IconPlace(image: String, modifier: Modifier=Modifier)
         Image(painter = painterResource(id = R.drawable.arch),
             contentDescription = null,
             modifier= Modifier
-                .offset(45.dp, 10.dp)
-                .size(60.dp))
+                .size(100.dp))
     }
     else if (image=="ticket")
     {
         Image(painter = painterResource(id = R.drawable.ticket),
             contentDescription = null,
             modifier= Modifier
-                .offset(45.dp, 10.dp)
-                .size(60.dp))
+                .size(100.dp))
     }
     else if (image=="museum")
     {
         Image(painter = painterResource(id = R.drawable.museum),
             contentDescription = null,
             modifier= Modifier
-                .offset(45.dp, 10.dp)
-                .size(60.dp))
+                .size(100.dp))
     }
 }
 
 @Composable
-fun TextAndBack(text : Place)
+fun TextAndBack(site : TouristSite, image : String)
 {
-    Image(painter = painterResource(id = R.drawable.greyback),
-        contentDescription = null, modifier = Modifier.size(150.dp)
-        )
-    Box(modifier = Modifier.width(70.dp).height(150.dp), contentAlignment = Alignment.Center)
-    {
-        Text(text.name,
-            modifier= Modifier
-                .offset(42.dp,10.dp),textAlign = TextAlign.Left,
-            style= TextStyle(fontSize = 10.sp, fontFamily = paris2024, fontWeight = FontWeight.Normal,color= Black
-            )
+    Box( modifier = Modifier.size(300.dp), Alignment.Center){
+        Image(painter = painterResource(id = R.drawable.greyback),
+            contentDescription = null, modifier = Modifier.size(300.dp)
         )
 
-        Text(text.address,
-            modifier= Modifier
-                .offset(42.dp, 35.dp),textAlign = TextAlign.Left,
-            style= TextStyle(fontSize = 10.sp, fontFamily = paris2024, fontWeight = FontWeight.Normal,color= Black
-            )
-        )
+        Column(
+            Modifier
+                .width(240.dp), horizontalAlignment = Alignment.CenterHorizontally){
 
-        Text(text.description,
-            modifier= Modifier
-                .offset(42.dp, 60.dp),
-            style= TextStyle(fontSize = 10.sp, fontFamily = paris2024, fontWeight = FontWeight.Normal,color= Black
+            IconPlace(image = image)
+            var sizeText = 5.dp
+            Text(site.nom_carto,textAlign = TextAlign.Center,modifier = Modifier.padding(sizeText),
+                style= TextStyle(fontSize = 18.sp, fontFamily = paris2024, fontWeight = FontWeight.Normal,color= Black,textAlign = TextAlign.Center
+                )
             )
-        )
 
+            Text(site.adresse +", "+ site.insee,
+                modifier = Modifier.padding(sizeText),
+                textAlign = TextAlign.Center,
+                style= TextStyle(fontSize = 18.sp, fontFamily = paris2024, fontWeight = FontWeight.Normal,color= Black, textAlign = TextAlign.Center
+                )
+            )
+
+            Text(site.typo_niv3,
+                modifier = Modifier.padding(sizeText),
+                style= TextStyle(fontSize = 18.sp, fontFamily = paris2024, fontWeight = FontWeight.Normal,color= Black,textAlign = TextAlign.Center
+                )
+            )
+
+        }
     }
+
 
 
 }
 
 @Composable
-fun Component_Place(text:Place, image:String)
+fun Component_Place(site : TouristSite, image:String, navController: NavHostController, modifier: Modifier = Modifier)
 {
-    TextAndBack(text = text)
-    IconPlace(image = image)
+    TextAndBack(site,image)
 }
 
 @Preview(showBackground = false)
 @Composable
 fun Place_Preview()
 {
-    //Component_Place(text = Place("Arc de Triomphe","Place de l'étoile","National museum"), image ="arche" )
+    var navController: NavHostController
+    navController = rememberNavController()
+    Component_Place(TouristSite(geo_point_2d = GeoPoint2D(15.0,15.0), GeoShape("Museum",GeoPoint2D(15.0,15.0),""), "75","18 rue Albert", "Paris", "75512","Arc de Triomphe", "Diffusion du spectacle vivant","15"),image ="arche",navController )
 }
+
