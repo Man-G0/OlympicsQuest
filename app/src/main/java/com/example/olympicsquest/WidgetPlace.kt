@@ -51,14 +51,14 @@ fun IconPlace(image: String, modifier: Modifier=Modifier)
 @Composable
 fun TextAndBack(site : TouristSite, image : String)
 {
-    Box( modifier = Modifier.size(300.dp), Alignment.Center){
+    Box( modifier = Modifier.size(270.dp), Alignment.Center){
         Image(painter = painterResource(id = R.drawable.greyback),
-            contentDescription = null, modifier = Modifier.size(300.dp)
+            contentDescription = null, modifier = Modifier.size(270.dp)
         )
 
         Column(
             Modifier
-                .width(240.dp), horizontalAlignment = Alignment.CenterHorizontally){
+                .width(230.dp), horizontalAlignment = Alignment.CenterHorizontally){
 
             IconPlace(image = image)
             var sizeText = 5.dp
@@ -82,8 +82,6 @@ fun TextAndBack(site : TouristSite, image : String)
 
         }
     }
-
-
 
 }
 

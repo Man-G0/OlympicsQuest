@@ -148,3 +148,4 @@ fun ShowLazyListActivities(sport : Sport, distance : Int, navController: NavHost
         }
     }
 }
+

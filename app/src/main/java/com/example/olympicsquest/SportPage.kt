@@ -8,6 +8,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -118,7 +119,7 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             Box(
                 modifier = Modifier
                     .background(Color.White, RoundedCornerShape(30.dp))
-                    .height(720.dp)
+                    .height(750.dp)
                     .fillMaxWidth()
 
                 )
@@ -151,7 +152,7 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             text = "Epreuve :",
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(17.dp, 300.dp),
+                .offset(17.dp, 360.dp),
             style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = paris2024,
@@ -167,7 +168,7 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
                 text = epreuve.toString().capitalize(),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .offset(17.dp, 320.dp),
+                    .offset(17.dp, 390.dp),
                 style = TextStyle(
                     fontSize = 20.sp,
                     fontFamily = paris2024,
@@ -181,7 +182,7 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             text = date.toString().capitalize(),
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(175.dp, 210.dp),
+                .offset(175.dp, 180.dp),
             style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = paris2024,
@@ -217,7 +218,7 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             text = "End : ",
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(175.dp, 260.dp),
+                .offset(175.dp, 230.dp),
             style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = paris2024,
@@ -229,7 +230,7 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             text = endTime.toString(),
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(220.dp, 260.dp),
+                .offset(220.dp, 230.dp),
             style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = paris2024,
@@ -241,7 +242,7 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             text = "Informations : ",
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(175.dp, 160.dp),
+                .offset(175.dp, 130.dp),
             style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = paris2024,
@@ -253,7 +254,7 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             text = lieu.toString(),
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(175.dp, 185.dp),
+                .offset(175.dp, 155.dp),
             style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = paris2024,
@@ -266,7 +267,7 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             text = "Olympics",
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(175.dp, 235.dp),
+                .offset(175.dp, 205.dp),
             style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = paris2024,
@@ -279,7 +280,7 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             text = "Quests nearby :",
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(17.dp, 480.dp),
+                .offset(17.dp, 520.dp),
             style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = paris2024,
@@ -301,24 +302,24 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             contentDescription = null,contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(130.dp)
-                .offset(x = 22.dp, y = 160.dp)
+                .offset(x = 22.dp, y = 132.dp)
         )
         //SportProfileImage(image = sport.toString())
 
     }
     Box(modifier.offset(x = 22.dp, y = 200.dp)){
-        ShowLazyListActivities( Sport(date.toString(),epreuve.toString(),geo_point.toString(),startTime.toString(),endTime.toString(),lieu.toString(),session.toString(),sport.toString()),2,  navController)
+        //ShowLazyListActivities( Sport(date.toString(),epreuve.toString(),geo_point.toString(),startTime.toString(),endTime.toString(),lieu.toString(),session.toString(),sport.toString()),2,  navController)
     }
    //Component_Place(text = Place("Arc de Triomphe","Place de l'étoile","4.5/5","Historical Monument"), image ="arche" )
-    DropDown(Sport(date.toString(),epreuve.toString(),geo_point.toString(),startTime.toString(),endTime.toString(),lieu.toString(),session.toString(),sport.toString()), navController)
+    DropDownKm(Sport(date.toString(),epreuve.toString(),geo_point.toString(),startTime.toString(),endTime.toString(),lieu.toString(),session.toString(),sport.toString()), navController)
 
 
 }
 @OptIn(ExperimentalMaterial3Api::class)
 // Le but de cette fonction était de faire un filtre drop down qui quand la valeur selectionné il filtre en fonction de ce lieu (museum,activity et monument)
-//Cette fonction ne marche malheureusement pas
+//Nous n'avons pas eu le temps ce faire ce filtre par contre le filtre pour trier les lieux en fonction de leur distance marche
 @Composable
-fun DropDown(Sport : Sport, navController: NavHostController){
+fun DropDownKm(Sport : Sport, navController: NavHostController){
 
     val list = listOf("1km", "2km", "3km")
 
@@ -328,46 +329,61 @@ fun DropDown(Sport : Sport, navController: NavHostController){
         mutableStateOf(false)
     }
 
-    Box(
-    modifier = Modifier
-        .width(20.dp)
-        .height(50.dp)
-        .offset(15.dp, 420.dp)
-    ) { ExposedDropdownMenuBox(
-        expanded = isExpanded,
-        onExpandedChange = { isExpanded = !isExpanded}
-        ) {
-            TextField(modifier=Modifier.menuAnchor(),value  = selectedText, onValueChange = {}, readOnly = true, trailingIcon ={ExposedDropdownMenuDefaults.TrailingIcon(
-            expanded = isExpanded)}
-            )
-            ExposedDropdownMenu(expanded = isExpanded, onDismissRequest = { isExpanded=false}) {
-                list.forEachIndexed { index,text ->
-                    DropdownMenuItem(
-                        text={Text(text=text, modifier = Modifier)},
-                        onClick = {
-                            selectedText=list[index]
-                            isExpanded = false
-                        },
-                        contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding
-                    )
+        Column (modifier=Modifier.fillMaxSize()){
+            Box(
+                modifier = Modifier
+                    .width(110.dp)
+                    .height(50.dp)
+                    .offset(15.dp, 280.dp)
+            ) { ExposedDropdownMenuBox(
+                expanded = isExpanded,
+                onExpandedChange = { isExpanded = !isExpanded}
+            ) {
+                TextField(modifier=Modifier.menuAnchor(),value  = selectedText, onValueChange = {}, readOnly = true, trailingIcon ={ExposedDropdownMenuDefaults.TrailingIcon(
+                    expanded = isExpanded)}
+                )
+                ExposedDropdownMenu(expanded = isExpanded, onDismissRequest = { isExpanded=false}) {
+                    list.forEachIndexed { index,text ->
+                        DropdownMenuItem(
+                            text={Text(text=text, modifier = Modifier)},
+                            onClick = {
+                                selectedText=list[index]
+                                isExpanded = false
+                            },
+                            contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding
+
+                        )
+
+                    }
+
+
+                }
+
+            }
+
+            }
+            if (selectedText=="1km")
+            {
+                Box(Modifier.offset(15.dp, 230.dp)){
+                    ShowLazyListActivities(Sport, 1 , navController =navController )
+                }
+
+            }
+            else if (selectedText=="2km")
+            {
+                Box(Modifier.offset(15.dp, 230.dp)){
+                    ShowLazyListActivities(Sport, 2, navController =navController )
+                }
+            }
+            else if (selectedText=="3km")
+            {
+                Box(Modifier.offset(15.dp,230.dp)){
+                    ShowLazyListActivities(Sport, 3 , navController =navController )
                 }
             }
         }
-        if (selectedText=="1km")
-        {
-            ShowLazyListActivities(Sport, 1 , navController =navController )
-        }
-        else if (selectedText=="2km")
-        {
-            ShowLazyListActivities(Sport, 2 , navController =navController )
-        }
-        else if (selectedText=="3km")
-        {
-            ShowLazyListActivities(Sport, 3, navController =navController )
-        }
-
-    }
 }
+
 @Preview(showBackground=true)
 @Composable
 fun Sport_Page_Preview(){
