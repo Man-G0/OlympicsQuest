@@ -312,12 +312,11 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
     }
    //Component_Place(text = Place("Arc de Triomphe","Place de l'étoile","4.5/5","Historical Monument"), image ="arche" )
     DropDownKm(Sport(date.toString(),epreuve.toString(),geo_point.toString(),startTime.toString(),endTime.toString(),lieu.toString(),session.toString(),sport.toString()), navController)
-
+    DropDownPlace()
 
 }
 @OptIn(ExperimentalMaterial3Api::class)
-// Le but de cette fonction était de faire un filtre drop down qui quand la valeur selectionné il filtre en fonction de ce lieu (museum,activity et monument)
-//Nous n'avons pas eu le temps ce faire ce filtre par contre le filtre pour trier les lieux en fonction de leur distance marche
+
 @Composable
 fun DropDownKm(Sport : Sport, navController: NavHostController){
 
@@ -382,6 +381,64 @@ fun DropDownKm(Sport : Sport, navController: NavHostController){
                 }
             }
         }
+}
+// Le but de cette fonction était de faire un filtre drop down qui quand la valeur selectionné il filtre en fonction de ce lieu (museum,activity et monument)
+//Nous n'avons pas eu le temps ce faire ce filtre par contre le filtre pour trier les lieux en fonction de leur distance marche
+@Composable
+fun DropDownPlace() {
+
+    val list = listOf("Museum", "Monument", "Activity")
+
+    var selectedText by remember { mutableStateOf(list[0]) }
+
+    var isExpanded by remember {
+        mutableStateOf(false)
+    }
+
+    Column(modifier = Modifier.fillMaxSize()) {
+        Box(
+            modifier = Modifier
+                .width(140.dp)
+                .height(50.dp)
+                .offset(150.dp, 280.dp)
+        ) {
+            ExposedDropdownMenuBox(
+                expanded = isExpanded,
+                onExpandedChange = { isExpanded = !isExpanded }
+            ) {
+                TextField(
+                    modifier = Modifier.menuAnchor(),
+                    value = selectedText,
+                    onValueChange = {},
+                    readOnly = true,
+                    trailingIcon = {
+                        ExposedDropdownMenuDefaults.TrailingIcon(
+                            expanded = isExpanded
+                        )
+                    }
+                )
+                ExposedDropdownMenu(
+                    expanded = isExpanded,
+                    onDismissRequest = { isExpanded = false }) {
+                    list.forEachIndexed { index, text ->
+                        DropdownMenuItem(
+                            text = { Text(text = text, modifier = Modifier) },
+                            onClick = {
+                                selectedText = list[index]
+                                isExpanded = false
+                            },
+                            contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding
+
+                        )
+
+                    }
+
+
+                }
+
+            }
+        }
+    }
 }
 
 @Preview(showBackground=true)
