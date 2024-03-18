@@ -65,7 +65,7 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
     }
     if(sport == "Archery"){
         image = R.drawable.tiralarc
-        icon = R.drawable.tiralarcprofile
+        icon = R.drawable.arcprofile
     }
     if(sport == "Athletisme"){
         image = R.drawable.athletisme
@@ -151,7 +151,7 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             text = "Epreuve :",
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(17.dp, 330.dp),
+                .offset(17.dp, 300.dp),
             style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = paris2024,
@@ -159,13 +159,15 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
                 color = Black
             )
         )
-        Box(modifier = Modifier.width(360.dp).height(100.dp))
+        Box(modifier = Modifier
+            .width(360.dp)
+            .height(100.dp))
         {
             Text(
                 text = epreuve.toString().capitalize(),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .offset(17.dp, 355.dp),
+                    .offset(17.dp, 320.dp),
                 style = TextStyle(
                     fontSize = 20.sp,
                     fontFamily = paris2024,
@@ -277,7 +279,7 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
             text = "Quests nearby :",
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(17.dp, 470.dp),
+                .offset(17.dp, 480.dp),
             style = TextStyle(
                 fontSize = 20.sp,
                 fontFamily = paris2024,
@@ -308,14 +310,16 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
         ShowLazyListActivities( Sport(date.toString(),epreuve.toString(),geo_point.toString(),startTime.toString(),endTime.toString(),lieu.toString(),session.toString(),sport.toString()),2,  navController)
     }
    //Component_Place(text = Place("Arc de Triomphe","Place de l'étoile","4.5/5","Historical Monument"), image ="arche" )
-    //DropDown()
+    DropDown()
 
 
 }
 @OptIn(ExperimentalMaterial3Api::class)
+// Le but de cette fonction était de faire un filtre drop down qui quand la valeur selectionné il filtre en fonction de ce lieu (museum,activity et monument)
+//Cette fonction ne marche malheureusement pas
 @Composable
 fun DropDown(){
-    val list = listOf("One", "Two", "Three", "Four", "Five")
+    val list = listOf("Museum", "Monument", "Activity")
 
     var selectedText by remember { mutableStateOf(list[0]) }
 
@@ -325,9 +329,9 @@ fun DropDown(){
 
     Box(
     modifier = Modifier
-        .width(100.dp)
+        .width(20.dp)
         .height(50.dp)
-        .offset(15.dp, 8.dp)
+        .offset(15.dp, 420.dp)
     ) { ExposedDropdownMenuBox(
         expanded = isExpanded,
         onExpandedChange = { isExpanded = !isExpanded}
@@ -338,11 +342,7 @@ fun DropDown(){
             ExposedDropdownMenu(expanded = isExpanded, onDismissRequest = { isExpanded=false}) {
                 list.forEachIndexed { index,text ->
                     DropdownMenuItem(
-                        text={Text(text=text, modifier = Modifier.offset(2.dp,2.dp),style = TextStyle(
-                                fontSize = 20.sp,//faire class avec nom pour mettre bonne endroit taille et font
-                            fontFamily = paris2024,
-                            fontWeight = FontWeight.Normal,
-                            color = Black))},
+                        text={Text(text=text, modifier = Modifier)},
                         onClick = {
                             selectedText=list[index]
                             isExpanded = false
@@ -350,60 +350,14 @@ fun DropDown(){
                         contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding
                     )
                 }
-            
             }
         }
     }
 }
-
-@Composable
-fun FilterableList()
-{
-    val items = listOf("Museum", "Monument", "Activity")
-    var selectedValue by remember { mutableStateOf<String?>(null) }
-
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp)
-    ) {
-        // Dropdown to select the filter value
-        DropdownMenu(
-            expanded = false,
-            onDismissRequest = { /* Close the dropdown if needed */ },
-            modifier = Modifier.align(Alignment.Start)
-        ) {
-            items.forEach() { item ->
-                DropdownMenuItem(
-                    text={Text(text=item, modifier = Modifier.offset(2.dp,2.dp),style = TextStyle(
-                        fontSize = 20.sp,
-                        fontFamily = paris2024,
-                        fontWeight = FontWeight.Normal,
-                        color = Black))},
-                    onClick = {
-
-                    },
-                    contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding
-                )
-            }
-        }
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        // Display filtered items
-        Column(modifier = Modifier.fillMaxSize()) {
-            items.filter { it == selectedValue }.forEach { filteredItem ->
-                Text(text = filteredItem)
-            }
-        }
-    }
-}
-
-
 @Preview(showBackground=true)
 @Composable
 fun Sport_Page_Preview(){
     var navController: NavHostController
-    navController = rememberNavController()
-    BackgroundSportPage("basket", "Finals", "Session","01/01/24","Parc des Princes","14h15","16h","2.253076, 48.841319", navController)
+    navController= rememberNavController()
+    BackgroundSportPage("Basketball 3x3", "Finals", "Session","01-01-24","Parc des Princes","14h15","16h","2.253076, 48.841319", navController)
 }

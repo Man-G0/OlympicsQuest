@@ -97,8 +97,7 @@ fun Component_Place(site : TouristSite, image:String, navController: NavHostCont
 @Composable
 fun Place_Preview()
 {
-    var navController: NavHostController
-    navController = rememberNavController()
+    var navController: NavHostController = rememberNavController()
     Component_Place(TouristSite(geo_point_2d = GeoPoint2D(15.0,15.0), GeoShape("Museum",GeoPoint2D(15.0,15.0),""), "75","18 rue Albert", "Paris", "75512","Arc de Triomphe", "Diffusion du spectacle vivant","15"),image ="monument",navController )
 }
 
