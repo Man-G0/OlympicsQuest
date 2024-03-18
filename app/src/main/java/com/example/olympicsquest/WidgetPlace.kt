@@ -25,14 +25,14 @@ data class Place(val name: String, val address: String, val ratings: String, val
 @Composable
 fun IconPlace(image: String, modifier: Modifier=Modifier)
 {
-    if(image=="arche")
+    if(image=="monument")
     {
         Image(painter = painterResource(id = R.drawable.arch),
             contentDescription = null,
             modifier= Modifier
                 .size(100.dp))
     }
-    else if (image=="ticket")
+    else if (image=="activity")
     {
         Image(painter = painterResource(id = R.drawable.ticket),
             contentDescription = null,
@@ -99,6 +99,6 @@ fun Place_Preview()
 {
     var navController: NavHostController
     navController = rememberNavController()
-    Component_Place(TouristSite(geo_point_2d = GeoPoint2D(15.0,15.0), GeoShape("Museum",GeoPoint2D(15.0,15.0),""), "75","18 rue Albert", "Paris", "75512","Arc de Triomphe", "Diffusion du spectacle vivant","15"),image ="arche",navController )
+    Component_Place(TouristSite(geo_point_2d = GeoPoint2D(15.0,15.0), GeoShape("Museum",GeoPoint2D(15.0,15.0),""), "75","18 rue Albert", "Paris", "75512","Arc de Triomphe", "Diffusion du spectacle vivant","15"),image ="monument",navController )
 }
 

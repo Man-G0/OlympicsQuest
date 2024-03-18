@@ -6,13 +6,17 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuBox
@@ -352,6 +356,48 @@ fun DropDown(){
     }
 }
 
+@Composable
+fun FilterableList()
+{
+    val items = listOf("Museum", "Monument", "Activity")
+    var selectedValue by remember { mutableStateOf<String?>(null) }
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+    ) {
+        // Dropdown to select the filter value
+        DropdownMenu(
+            expanded = false,
+            onDismissRequest = { /* Close the dropdown if needed */ },
+            modifier = Modifier.align(Alignment.Start)
+        ) {
+            items.forEach() { item ->
+                DropdownMenuItem(
+                    text={Text(text=item, modifier = Modifier.offset(2.dp,2.dp),style = TextStyle(
+                        fontSize = 20.sp,
+                        fontFamily = paris2024,
+                        fontWeight = FontWeight.Normal,
+                        color = Black))},
+                    onClick = {
+
+                    },
+                    contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding
+                )
+            }
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Display filtered items
+        Column(modifier = Modifier.fillMaxSize()) {
+            items.filter { it == selectedValue }.forEach { filteredItem ->
+                Text(text = filteredItem)
+            }
+        }
+    }
+}
 
 
 @Preview(showBackground=true)

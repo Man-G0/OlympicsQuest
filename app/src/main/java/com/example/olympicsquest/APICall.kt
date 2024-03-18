@@ -137,10 +137,10 @@ fun ShowLazyListActivities(sport : Sport, distance : Int, navController: NavHost
                     image = "museum"
                 }
                 else if(each.typo_niv3 =="Diffusion du spectacle vivant"||each.typo_niv3 == "Espace de loisirs, espace récréatif"){
-                    image = "ticket"
+                    image = "activity"
                 }
                 else{
-                    image = "arche"
+                    image = "monument"
                 }
 
                 Component_Place(each, image, navController,Modifier.scale(1.2f))
