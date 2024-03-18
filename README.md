@@ -19,4 +19,4 @@ Here we can search our olympic ticket cession by the name of the sport, start ti
 <img width="272" alt="RechercheSportOlympic" src="https://github.com/Man-G0/OlympicsQuest/assets/156075990/79bb2825-7caf-4d90-9a50-dc758d824259">
 
 
-After clicking on your sport cession, you arrive at the page that will display all information about you olympic cession. The real utility of the application lies in the "quest" session. You will have a selection of activities near the olympic site (around 2km around). They are filtered by museums, monuments and activities. 
+After clicking on your sport cession, you arrive at the page that will display all information about your olympic cession. The real utility of the application lies in the "quest" session. You will have a selection of activities near the olympic site (around 2km around). They are filtered by museums, monuments and activities. 
