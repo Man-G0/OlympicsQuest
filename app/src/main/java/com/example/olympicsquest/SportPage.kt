@@ -310,7 +310,7 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
         ShowLazyListActivities( Sport(date.toString(),epreuve.toString(),geo_point.toString(),startTime.toString(),endTime.toString(),lieu.toString(),session.toString(),sport.toString()),2,  navController)
     }
    //Component_Place(text = Place("Arc de Triomphe","Place de l'étoile","4.5/5","Historical Monument"), image ="arche" )
-    DropDown()
+    DropDown(Sport(date.toString(),epreuve.toString(),geo_point.toString(),startTime.toString(),endTime.toString(),lieu.toString(),session.toString(),sport.toString()), navController)
 
 
 }
@@ -318,8 +318,9 @@ fun BackgroundSportPage(sport : String?,epreuve : String?,session : String?,date
 // Le but de cette fonction était de faire un filtre drop down qui quand la valeur selectionné il filtre en fonction de ce lieu (museum,activity et monument)
 //Cette fonction ne marche malheureusement pas
 @Composable
-fun DropDown(){
-    val list = listOf("Museum", "Monument", "Activity")
+fun DropDown(Sport : Sport, navController: NavHostController){
+
+    val list = listOf("1km", "2km", "3km")
 
     var selectedText by remember { mutableStateOf(list[0]) }
 
@@ -352,6 +353,19 @@ fun DropDown(){
                 }
             }
         }
+        if (selectedText=="1km")
+        {
+            ShowLazyListActivities(Sport, 1 , navController =navController )
+        }
+        else if (selectedText=="2km")
+        {
+            ShowLazyListActivities(Sport, 2 , navController =navController )
+        }
+        else if (selectedText=="3km")
+        {
+            ShowLazyListActivities(Sport, 3, navController =navController )
+        }
+
     }
 }
 @Preview(showBackground=true)
